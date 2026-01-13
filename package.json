@@ -13,6 +13,7 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
     "@tailwindcss/vite": "^4.1.18",
+    "cobe": "^0.6.5",
     "globe": "^0.2.0",
     "maath": "^0.10.8",
     "motion": "^12.26.1",
