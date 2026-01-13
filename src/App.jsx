@@ -6,6 +6,7 @@ import Projects from './sections/Projects'
 import Experiences from './sections/Experiences'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
+import Footer from './sections/Footer'
 
 const App = () => {
   return (
