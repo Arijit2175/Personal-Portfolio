@@ -7,6 +7,9 @@ const Hero = () => {
   min-h-screen overflow-hidden c-space">
     <HeroText />
     <ParallaxBackground />
+    <figure className="absolute inset-0" style={{width: "100vw", height: "100vh"}}>
+
+    </figure>
     </section>
 }
 
