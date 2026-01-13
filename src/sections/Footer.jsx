@@ -1,3 +1,5 @@
+import { mySocials } from "../constants";
+
 const Footer = () => {
   return ( 
   <section className="flex flex-wrap items-center justify-between
