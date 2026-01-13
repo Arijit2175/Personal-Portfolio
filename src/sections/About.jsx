@@ -93,7 +93,18 @@ const About = () => {
         </div>
             </div>
             {/* Grid 5 */}
-            <div className="grid-default-color grid-5"></div>
+            <div className="grid-default-color grid-5">
+                 <div className="z-10 w-[50%]">
+            <p className="headText">Tech Stack</p>
+            <p className="subtext">
+              I specialize in a variety of languages, frameworks, and tools that
+              allow me to build robust and scalable applications
+            </p>
+          </div>
+          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+            <Frameworks />
+          </div>
+            </div>
         </div>
     </section>
   )
