@@ -5,10 +5,10 @@ export const myProjects = [
     description:
       "An interactive single-page restaurant frontend that showcases a modern dining brand",
     subDescription: [
-      "Developed a modern, responsive restaurant frontend using HTML, CSS, and JavaScript to showcase dining services and menu offerings",
-      "Built intuitive navigation with light/dark theming, sticky header, and scroll-aware interactions to enhance user experience.",
-      "Structured content into clear sections with interactive elements and animations for visual engagement.",
-      "Designed a mobile-friendly layout with persistent theme preferences and smooth scroll features for cross-device usability",
+      "Responsive restaurant website built with HTML, CSS, and JavaScript.",
+      "Smooth navigation with dark/light mode, sticky header, and scroll effects.",
+      "Clean sectioned layout with animations for engaging visuals.",
+      "Mobile-optimized design with smooth scrolling and theme persistence.",
     ],
     href: "",
     logo: "",
@@ -37,10 +37,10 @@ export const myProjects = [
     description:
       "BitForge is a custom-built torrent-like peer-to-peer file sharing client designed from scratch in Python.",
     subDescription: [
-      "Built a custom peer-to-peer file sharing system inspired by the BitTorrent protocol using Python, demonstrating deep understanding of networking and distributed systems.",
-      "Implemented torrent file parsing, tracker-based peer discovery, parallel chunk downloads, resume support, and chunk verification for reliable, resumable transfers.",
-      "Integrated a PyQt5 GUI with progress visualization, theme toggle, and threaded backend for a seamless user experience.",
-      "Designed modular components for seeding, uploading, and multi-peer communication, enabling experimentation with P2P mechanics and extensibility.",
+      "Custom BitTorrent-inspired P2P file sharing system built in Python.",
+      "Supports torrent parsing, peer discovery, parallel downloads, and resume verification.",
+      "PyQt5 GUI with download progress, theme toggle, and threaded execution.",
+      "Modular seeding and multi-peer architecture for scalable P2P experimentation.",
     ],
     href: "",
     logo: "",
@@ -49,7 +49,7 @@ export const myProjects = [
       {
         id: 1,
         name: "Python",
-        path: "/assets/logos/python.svg",
+        path: "/assets/logos/Python.svg",
       },
       {
         id: 2,
@@ -64,9 +64,9 @@ export const myProjects = [
     description:
       "This system is inspired by the core principles of Git, reimagined through the lens of SQL",
     subDescription: [
-      "Implemented commit tracking, branching, and merging logic using relational database constructs and hashing for history management.",
-      "Developed a Tkinter GUI frontend for intuitive interaction with version control actions like commit creation, branch management, and history viewing.",
-      "Explored Git-inspired design patterns in a novel context, blending database engineering with user-friendly tooling to deepen understanding of VCS principles.",
+      "Implemented commit history, branching, and merging using MySQL and hashing.",
+      "Built a Tkinter GUI for managing commits, branches, and version history.",
+      "Applied Git-inspired design concepts to a database-backed version control system.",
     ],
     href: "",
     logo: "",
@@ -75,7 +75,7 @@ export const myProjects = [
       {
         id: 1,
         name: "Python",
-        path: "/assets/logos/python.svg",
+        path: "/assets/logos/Python.svg",
       },
       {
         id: 2,
@@ -90,9 +90,9 @@ export const myProjects = [
     description:
       "A simplified educational implementation of how VPN (Virtual Private Network) technology works.",
     subDescription: [
-      "Implemented AES symmetric encryption and RSA key exchange with real-time packet capture/forwarding using Pcap4J for hands-on learning of network security concepts.",
-      "Designed a Swing-based GUI featuring dark/light themes, traffic visualization, and responsive controls to monitor VPN traffic and encryption state.",
-      "Structured threaded networking, socket communication, and encryption modules for extensibility and experimentation with secure networking workflows.",
+      "Implemented AES encryption and RSA key exchange with real-time packet forwarding using Pcap4J.",
+      "Built a Swing-based GUI with dark/light mode and live VPN traffic visualization.",
+      "Designed a modular, multi-threaded architecture for secure socket-based networking.",
     ],
     href: "",
     logo: "",
@@ -111,14 +111,14 @@ export const myProjects = [
     description:
       "A custom multi-client, socket-based web server written entirely in PHP.",
     subDescription: [
-      "Built a custom multi-client web server from scratch in PHP using low-level socket programming for handling HTTP requests and responses.",
-      "Implemented static file serving, custom routing, file uploads/downloads, MIME detection, and secure request handling.",
-      "Designed multi-client non-blocking socket support and logging for concurrent request processing and monitoring.",
-      "Focused on core networking fundamentals and PHP server internals to demonstrate understanding of server-side systems beyond typical Apache/Nginx usage.",
+      "Custom multi-client web server built in PHP using low-level socket programming.",
+      "Supports static file serving, routing, uploads/downloads, and MIME handling.",
+      "Non-blocking sockets with logging for concurrent request processing.",
+      "Demonstrates core HTTP and server-side networking fundamentals beyond Apache/Nginx.",
     ],
     href: "",
     logo: "",
-    image: "/assets/projects/webserver.jpeg",
+    image: "/assets/projects/webserver.png",
     tags: [
       {
         id: 1,
@@ -143,10 +143,10 @@ export const myProjects = [
     description:
       "The Cyberattack Detection & Visualization Dashboard is an interactive 3D visualization system that simulates and displays real-time cyberattack activity across the globe.",
     subDescription: [
-      "Built a real-time cyberattack detection and visualization system using machine learning to identify DDoS-style network threats and display them on an interactive dashboard.",
-      "Implemented backend detection logic with Python, Flask, and trained models to continuously monitor traffic and flag abnormal activity.",
-      "Developed an immersive 3D frontend visualization using HTML/CSS/JavaScript and Three.js to represent attack sources and patterns globally.",
-      "Integrated real-time analytics, logs, and visual alerts to support interactive insights into cybersecurity events and enhance situational awareness.",
+      "Real-time cyberattack detection system using ML to identify DDoS threats.",
+      "Python–Flask backend continuously monitors traffic and flags anomalies.",
+      "3D global attack visualization built with Three.js and web technologies.",
+      "Live analytics, logs, and visual alerts for cybersecurity monitoring.",
     ],
     href: "",
     logo: "",
@@ -155,7 +155,7 @@ export const myProjects = [
       {
         id: 1,
         name: "Python",
-        path: "/assets/logos/python.svg",
+        path: "/assets/logos/Python.svg",
       },
       {
         id: 2,
