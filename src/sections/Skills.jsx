@@ -23,7 +23,6 @@ const SkillCard = ({ img, name, body }) => {
           <figcaption className="text-sm font-medium text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium text-white/40">{username}</p>
         </div>
       </div>
       <blockquote className="mt-2 text-sm">{body}</blockquote>
@@ -34,7 +33,7 @@ const SkillCard = ({ img, name, body }) => {
 export default function Skills() {
   return (
     <div className="items-start mt-25 md:mt-35 c-space">
-      <h2 className="text-heading">My Skill Levels</h2>
+      <h2 className="text-heading">Technical Skills</h2>
       <div className="relative flex flex-col items-center justify-center w-full mt-12 overflow-hidden">
         <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((skill) => (

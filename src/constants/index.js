@@ -222,31 +222,31 @@ export const skill = [
   {
     name: "Python",
     body: "Intermediate proficiency in Python for data analysis, web development, and scripting.",
-    img: "assets/Logos/Python.svg",
+    img: "assets/logos/Python.svg",
   },
   {
     name: "Java",
     body: "Intermediate proficiency in Java for building robust applications, with experience in OOP and data structures.",
-    img: "assets/Logos/java.svg",
+    img: "assets/logos/java.svg",
   },
   {
     name: "MySQL",
     body: "Highly skilled in MySQL for database design, querying, and management of relational databases.",
-    img: "assets/Logos/mysql.svg",
+    img: "assets/logos/mysql.svg",
   },
   {
     name: "JavaScript",
     body: "Beginner level knowledge of JavaScript for creating interactive web pages and applications.",
-    img: "assets/Logos/javascript.svg",
+    img: "assets/logos/javascript.svg",
   },
   {
     name: "React",
     body: "Intermediate skills in React for building dynamic and responsive user interfaces.",
-    img: "assets/Logos/react.svg",
+    img: "assets/logos/react.svg",
   },
   {
     name: "PHP",
     body: "Beginner proficiency in PHP for server-side web development and backend scripting.",
-    img: "assets/Logos/php.svg",
+    img: "assets/logos/php.svg",
   },
 ];
