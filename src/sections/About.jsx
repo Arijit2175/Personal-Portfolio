@@ -70,7 +70,17 @@ const About = () => {
           </div>
             </div>
             {/* Grid 3 */}
-            <div className="grid-black-color grid-3"></div>
+            <div className="grid-black-color grid-3">
+                <div className="z-10 w-[50%]">
+            <p className="headtext">Time Zone</p>
+            <p className="subtext">
+              I'm based in Hyderabad, and open to remote work worldwide
+            </p>
+          </div>
+          <figure className="absolute left-[30%] top-[10%]">
+            <Globe />
+          </figure>
+            </div>
             {/* Grid 4 */}
             <div className="grid-special-color grid-4"></div>
             {/* Grid 5 */}
