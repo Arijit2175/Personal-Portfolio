@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+
 const CopyEmailButton = () => {
   const [copied, setCopied] = useState(false);
   const email = "arijitkarmakar2175@gmail.com";
