@@ -4,7 +4,7 @@ import { skill } from "../constants";
 const firstRow = skill.slice(0, skill.length / 2);
 const secondRow = skill.slice(skill.length / 2);
 
-const SkillCard = ({ img, name, username, body }) => {
+const SkillCard = ({ img, name, body }) => {
   return (
     <figure
       className={twMerge(
@@ -38,12 +38,12 @@ export default function Skills() {
       <div className="relative flex flex-col items-center justify-center w-full mt-12 overflow-hidden">
         <Marquee pauseOnHover className="[--duration:20s]">
           {firstRow.map((skill) => (
-            <SkillCard key={skill.username} {...skill} />
+            <SkillCard key={skill.name} {...skill} />
           ))}
         </Marquee>
         <Marquee reverse pauseOnHover className="[--duration:20s]">
           {secondRow.map((skill) => (
-            <SkillCard key={skill.username} {...skill} />
+            <SkillCard key={skill.name} {...skill} />
           ))}
         </Marquee>
         <div className="absolute inset-y-0 left-0 w-1/4 pointer-events-none bg-gradient-to-r from-primary"></div>
