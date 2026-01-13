@@ -1,4 +1,4 @@
-import React from 'react'
+import { motion } from "motion/react";
 
 const Card = ({ style, text, image, containerRef }) => {
   return image && !text ? (
