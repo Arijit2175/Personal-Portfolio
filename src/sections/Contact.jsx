@@ -1,3 +1,8 @@
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import Alert from "../components/Alert";
+import { Particles } from "../components/Particles";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
