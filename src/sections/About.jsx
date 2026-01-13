@@ -32,7 +32,7 @@ const About = () => {
             className="flex items-center justify-center w-full h-full"
           >
             <p className="flex items-end text-5xl text-gray-500">
-              CODE BY SHEER WILL
+              CODE BY WILL
             </p>
             <Card
               style={{ rotate: "75deg", top: "30%", left: "20%" }}
