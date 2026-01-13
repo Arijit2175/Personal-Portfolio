@@ -1,5 +1,7 @@
+import { Canvas } from "@react-three/fiber"
 import HeroText from "../components/HeroText"
 import ParallaxBackground from "../components/ParallaxBackground"
+import Astronaut from "../components/Astronaut"
 
 const Hero = () => {
   return <section className="flex items-start 
@@ -9,7 +11,7 @@ const Hero = () => {
     <ParallaxBackground />
     <figure className="absolute inset-0" style={{width: "100vw", height: "100vh"}}>
       <Canvas>
-        
+        <Astronaut />
       </Canvas>
     </figure>
     </section>
