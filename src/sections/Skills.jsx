@@ -1,3 +1,9 @@
+import { twMerge } from "tailwind-merge";
+import Marquee from "../components/Marquee";
+import { skill } from "../constants";
+const firstRow = skill.slice(0, skill.length / 2);
+const secondRow = skill.slice(skill.length / 2);
+
 const SkillCard = ({ img, name, username, body }) => {
   return (
     <figure
