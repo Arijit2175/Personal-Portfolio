@@ -92,19 +92,12 @@ This portfolio was deployed in vercel, you can check the live version here:
 ## 🔗 References
 
 - React: https://react.dev/
-
 - Framer Motion: https://www.framer.com/motion/
-
 - Three.js: https://threejs.org/
-
 - React Three Fiber: https://docs.pmnd.rs/react-three-fiber
-
 - Drei: https://docs.pmnd.rs/drei
-
 - MDN Web Docs – JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-
 - CSS-Tricks: https://css-tricks.com/
-
 - Magic UI: https://magicui.design/
 
 <br>
