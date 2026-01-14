@@ -15,3 +15,17 @@ A modern, responsive personal portfolio website designed to showcase projects, s
 
 ---
 
+## 🛠️ Tech Stack Used
+
+| Layer / Component        | Technologies Used    | Description                                                    |
+| ------------------------ | -------------------- | -------------------------------------------------------------- |
+| **Frontend Framework**   | React.js             | Component-based UI architecture and state management           |
+| **Animations**           | Framer Motion        | Smooth page transitions, hover effects, and section animations |
+| **3D Graphics**          | Three.js             | Core 3D rendering engine                                       |
+| **React 3D Integration** | @react-three/fiber   | Declarative Three.js rendering inside React                    |
+| **3D Utilities**         | @react-three/drei    | Helpers for cameras, lights, controls, and loaders             |
+| **Styling**              | CSS3 / Modern CSS    | Responsive layouts, spacing, and typography                    |
+| **Build Tooling**        | Vite / React Scripts | Fast development server and optimized production builds        |
+
+---
+
