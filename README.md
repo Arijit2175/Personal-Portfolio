@@ -89,3 +89,21 @@ This portfolio was deployed in vercel, you can check the live version here:
 
 ---
 
+## 🔗 References
+
+- MDN Web Docs – HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+
+- MDN Web Docs – CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+
+- MDN Web Docs – JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+- Google Fonts: https://fonts.google.com/
+
+- Font Awesome: https://fontawesome.com/
+
+- CSS-Tricks: https://css-tricks.com/
+
+- W3Schools – Responsive Design: https://www.w3schools.com/css/css_rwd_intro.asp
+
+- Magic UI: https://magicui.design/
+
