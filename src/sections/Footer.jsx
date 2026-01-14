@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
         ))}
       </div>
-      <p>© 2025 Arijit Karmakar.</p>
+      <p>© 2025 Arijit Karmakar. All rights reserved.</p>
   </section>
   );
 };
