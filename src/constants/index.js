@@ -10,7 +10,7 @@ export const myProjects = [
       "Clean sectioned layout with animations for engaging visuals.",
       "Mobile-optimized design with smooth scrolling and theme persistence.",
     ],
-    href: "",
+    href: "https://github.com/Arijit2175/Restaurant-Website-Frontend",
     logo: "",
     image: "/assets/projects/restaurant.png",
     tags: [
@@ -42,7 +42,7 @@ export const myProjects = [
       "PyQt5 GUI with download progress, theme toggle, and threaded execution.",
       "Modular seeding and multi-peer architecture for scalable P2P experimentation.",
     ],
-    href: "",
+    href: "https://github.com/Arijit2175/BitForge",
     logo: "",
     image: "/assets/projects/bitforge.png",
     tags: [
@@ -68,7 +68,7 @@ export const myProjects = [
       "Built a Tkinter GUI for managing commits, branches, and version history.",
       "Applied Git-inspired design concepts to a database-backed version control system.",
     ],
-    href: "",
+    href: "https://github.com/Arijit2175/VCS-Implementation",
     logo: "",
     image: "/assets/projects/vcs.png",
     tags: [
@@ -94,7 +94,7 @@ export const myProjects = [
       "Built a Swing-based GUI with dark/light mode and live VPN traffic visualization.",
       "Designed a modular, multi-threaded architecture for secure socket-based networking.",
     ],
-    href: "",
+    href: "https://github.com/Arijit2175/VPN-implementation",
     logo: "",
     image: "/assets/projects/vpn.png",
     tags: [
@@ -116,7 +116,7 @@ export const myProjects = [
       "Non-blocking sockets with logging for concurrent request processing.",
       "Demonstrates core HTTP and server-side networking fundamentals beyond Apache/Nginx.",
     ],
-    href: "",
+    href: "https://github.com/Arijit2175/Web-Server-php",
     logo: "",
     image: "/assets/projects/webserver.png",
     tags: [
@@ -148,7 +148,7 @@ export const myProjects = [
       "3D global attack visualization built with Three.js and web technologies.",
       "Live analytics, logs, and visual alerts for cybersecurity monitoring.",
     ],
-    href: "",
+    href: "https://github.com/Arijit2175/Live-Cyberattack-Detector",
     logo: "",
     image: "/assets/projects/cyberattack.png",
     tags: [
