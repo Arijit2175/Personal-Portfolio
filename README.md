@@ -107,3 +107,6 @@ This portfolio was deployed in vercel, you can check the live version here:
 
 - Magic UI: https://magicui.design/
 
+<br>
+
+👨‍💻 **Developed by** – @Arijit2175
