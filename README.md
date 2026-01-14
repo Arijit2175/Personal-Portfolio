@@ -79,3 +79,13 @@ This portfolio was deployed in vercel, you can check the live version here:
 
 ---
 
+## ⚙️ Application Behavior
+
+- **Navigation**: Smooth scrolling between sections with active-link highlighting.
+- **Responsiveness**: Fully responsive layout adapting to different screen sizes.
+- **Animations**: Sections animate into view for a polished user experience.
+- **Project Showcasing**: Each project card highlights key work with external links.
+- **Performance**: Lightweight assets ensure fast loading and smooth interactions.
+
+---
+
