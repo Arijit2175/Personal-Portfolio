@@ -135,6 +135,11 @@ export const myProjects = [
         name: "CSS3",
         path: "/assets/logos/css3.svg",
       },
+      {
+        id: 4,
+        name: "Javascript",
+        path: "/assets/logos/javascript.svg",
+      },
     ],
   },
   {
