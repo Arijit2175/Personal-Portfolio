@@ -5,3 +5,13 @@ A modern, responsive personal portfolio website designed to showcase projects, s
 
 ---
 
+## 🎯 Objectives
+
+- Present personal profile, skills, and projects in a clean and professional layout.
+- Showcase featured projects with descriptions and live/demo links.
+- Provide smooth navigation with section-based scrolling and visual feedback.
+- Ensure responsiveness across desktop, tablet, and mobile devices.
+- Maintain a lightweight frontend using core web technologies for easy deployment.
+
+---
+
