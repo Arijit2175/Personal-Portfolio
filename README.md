@@ -91,19 +91,19 @@ This portfolio was deployed in vercel, you can check the live version here:
 
 ## 🔗 References
 
-- MDN Web Docs – HTML: https://developer.mozilla.org/en-US/docs/Web/HTML
+- React: https://react.dev/
 
-- MDN Web Docs – CSS: https://developer.mozilla.org/en-US/docs/Web/CSS
+- Framer Motion: https://www.framer.com/motion/
+
+- Three.js: https://threejs.org/
+
+- React Three Fiber: https://docs.pmnd.rs/react-three-fiber
+
+- Drei: https://docs.pmnd.rs/drei
 
 - MDN Web Docs – JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
-- Google Fonts: https://fonts.google.com/
-
-- Font Awesome: https://fontawesome.com/
-
 - CSS-Tricks: https://css-tricks.com/
-
-- W3Schools – Responsive Design: https://www.w3schools.com/css/css_rwd_intro.asp
 
 - Magic UI: https://magicui.design/
 
