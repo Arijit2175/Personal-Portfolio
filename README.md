@@ -58,3 +58,17 @@ Personal-Portfolio/
 
 ---
 
+## 🖥️ Preview
+
+**Key Sections**
+- Hero section with name, role, and call-to-action buttons
+- About section highlighting background and interests
+- Skills section displaying technical stack and tools
+- Projects section with cards linking to GitHub/live demos
+- Contact section with social links and email access
+
+### Preview
+![Preview](public/assets/preview.png)
+
+---
+
