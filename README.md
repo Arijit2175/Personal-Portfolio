@@ -29,3 +29,32 @@ A modern, responsive personal portfolio website designed to showcase projects, s
 
 ---
 
+## 🗂️ Project Structure
+
+```
+Personal-Portfolio/
+├── src/
+│   ├── components/
+│   │   ├── (UI and layout components)
+│   ├── sections/
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Experiences.jsx
+│   │   ├── Footer.jsx
+│   │   └── Contact.jsx
+│   ├── constants/
+│   │   └── index.js
+│   ├── public/
+│   │   ├── assets/
+│   │   │    └── (images, icons, logos)
+│   │   └── models/
+│   ├── App.jsx
+│   └── main.jsx
+├──  index.html
+└── README.md
+```
+
+---
+
