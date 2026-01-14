@@ -72,3 +72,10 @@ Personal-Portfolio/
 
 ---
 
+## 🌐 Public View
+This portfolio was deployed in vercel, you can check the live version here:
+
+[🔗 View Live Site](https://personal-portfolio-ten-theta-63.vercel.app/)
+
+---
+
