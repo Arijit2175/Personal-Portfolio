@@ -7,19 +7,23 @@ import Experiences from './sections/Experiences'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
+import CustomCursor from './components/CustomCursor'
 
 const App = () => {
   return (
-    <div className="container mx-auto max-w-7xl">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experiences />
-      <Skills />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <CustomCursor />
+      <div className="container mx-auto max-w-7xl">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Experiences />
+        <Skills />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   )
 }
 
