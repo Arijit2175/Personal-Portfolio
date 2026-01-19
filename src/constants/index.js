@@ -144,16 +144,16 @@ export const myProjects = [
   },
   {
     id: 6,
-    title: "Live Cyberattack Detector",
+    title: "AI Driven Cyber Threat Dashboard",
     description:
-      "The Cyberattack Detection & Visualization Dashboard is an interactive 3D visualization system that simulates and displays real-time cyberattack activity across the globe.",
+      "A lightweight, real-time dashboard built to visualize network flow data and detect potential cyber threats using AI predictions.",
     subDescription: [
-      "Real-time cyberattack detection system using ML to identify DDoS threats.",
-      "Python–Flask backend continuously monitors traffic and flags anomalies.",
-      "3D global attack visualization built with Three.js and web technologies.",
-      "Live analytics, logs, and visual alerts for cybersecurity monitoring.",
+      "AI-powered threat detector classifying network traffic as normal or malicious.",
+      "Java packet capture integrated with Python ML for real-time analysis.",
+      "Live web dashboard displaying threat predictions and network insights.",
+      "Responsive UI with charts, logs, and exportable monitoring data.",
     ],
-    href: "https://github.com/Arijit2175/Live-Cyberattack-Detector",
+    href: "https://github.com/Arijit2175/AI-Driven-Cyber-Threat-Detector",
     logo: "",
     image: "/assets/projects/cyberattack.png",
     tags: [
