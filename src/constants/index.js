@@ -164,26 +164,31 @@ export const myProjects = [
       },
       {
         id: 2,
+        name: "Java",
+        path: "/assets/logos/java.svg",
+      },
+      {
+        id: 3,
         name: "TensorFlow",
         path: "/assets/logos/tensorflow.svg",
       },
       {
-        id: 3,
+        id: 4,
         name: "Pandas",
         path: "/assets/logos/pandas.svg",
       },
       {
-        id: 4,
+        id: 5,
         name: "HTML5",
         path: "/assets/logos/html5.svg",
       },
       {
-        id: 5,
+        id: 6,
         name: "CSS3",
         path: "/assets/logos/css3.svg",
       },
       {
-        id: 6,
+        id: 7,
         name: "Javascript",
         path: "/assets/logos/javascript.svg",
       },
