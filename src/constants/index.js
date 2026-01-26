@@ -60,17 +60,18 @@ export const myProjects = [
   },
   {
     id: 3,
-    title: "VCS Implementation",
+    title: "Heart Disease Prediction System",
     description:
-      "This system is inspired by the core principles of Git, reimagined through the lens of SQL",
+      "A machine learning-based system to predict heart disease risk using patient data.",
     subDescription: [
-      "Implemented commit history, branching, and merging using MySQL and hashing.",
-      "Built a Tkinter GUI for managing commits, branches, and version history.",
-      "Applied Git-inspired design concepts to a database-backed version control system.",
+      "Built an ML-powered heart disease prediction dashboard using Python and Streamlit.",
+      "Trained and evaluated a Random Forest classifier on clinical health data for risk prediction.",
+      "Integrated explainable AI (SHAP) to show feature impact on individual predictions.",
+      "Developed a user-friendly interactive UI for entering patient parameters and viewing results."
     ],
-    href: "https://github.com/Arijit2175/VCS-Implementation",
+    href: "https://github.com/Arijit2175/Heart-Disease-Prediction",
     logo: "",
-    image: "/assets/projects/vcs.png",
+    image: "/assets/projects/heart.png",
     tags: [
       {
         id: 1,
@@ -79,8 +80,28 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: "MySQL",
-        path: "/assets/logos/mysql.svg",
+        name: "Pandas",
+        path: "/assets/logos/pandas.svg",
+      },
+      {
+        id: 3,
+        name: "Streamlit",
+        path: "/assets/logos/Streamlit.svg",
+      },
+      {
+        id: 4,
+        name: "Scikit-Learn",
+        path: "/assets/logos/scikit-learn.svg",
+      },
+      {
+        id: 5,
+        name: "Numpy",
+        path: "/assets/logos/numpy.svg",
+      },
+      {
+        id: 6,
+        name: "Matplotlib",
+        path: "/assets/logos/matplotlib.svg",
       },
     ],
   },
