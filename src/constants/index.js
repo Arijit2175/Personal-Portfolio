@@ -60,7 +60,7 @@ export const myProjects = [
   },
   {
     id: 3,
-    title: "Heart Disease Prediction System",
+    title: "Heart-Hero",
     description:
       "A machine learning-based system to predict heart disease risk using patient data.",
     subDescription: [
@@ -69,7 +69,7 @@ export const myProjects = [
       "Integrated explainable AI (SHAP) to show feature impact on individual predictions.",
       "Developed a user-friendly interactive UI for entering patient parameters and viewing results."
     ],
-    href: "https://github.com/Arijit2175/Heart-Disease-Prediction",
+    href: "https://github.com/Arijit2175/Heart-Hero",
     logo: "",
     image: "/assets/projects/heart.png",
     tags: [
