@@ -1,16 +1,16 @@
 export const myProjects = [
   {
     id: 1,
-    title: "Restaurant Platform Frontend",
+    title: "Restaurant Platform",
     description:
-      "An interactive single-page restaurant frontend that showcases a modern dining brand",
+      "An interactive single-page restaurant website that showcases a modern dining brand",
     subDescription: [
       "Responsive restaurant website built with HTML, CSS, and JavaScript.",
       "Smooth navigation with dark/light mode, sticky header, and scroll effects.",
       "Clean sectioned layout with animations for engaging visuals.",
       "Mobile-optimized design with smooth scrolling and theme persistence.",
     ],
-    href: "https://github.com/Arijit2175/Restaurant-Website-Frontend",
+    href: "https://github.com/Arijit2175/Restaurant-Website",
     logo: "",
     image: "/assets/projects/restaurant.png",
     tags: [
