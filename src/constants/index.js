@@ -1,16 +1,16 @@
 export const myProjects = [
   {
     id: 1,
-    title: "Restaurant Platform Frontend",
+    title: "Restaurant Platform",
     description:
-      "An interactive single-page restaurant frontend that showcases a modern dining brand",
+      "An interactive single-page restaurant website that showcases a modern dining brand",
     subDescription: [
       "Responsive restaurant website built with HTML, CSS, and JavaScript.",
       "Smooth navigation with dark/light mode, sticky header, and scroll effects.",
       "Clean sectioned layout with animations for engaging visuals.",
       "Mobile-optimized design with smooth scrolling and theme persistence.",
     ],
-    href: "https://github.com/Arijit2175/Restaurant-Website-Frontend",
+    href: "https://github.com/Arijit2175/Restaurant-Website",
     logo: "",
     image: "/assets/projects/restaurant.png",
     tags: [
@@ -60,7 +60,7 @@ export const myProjects = [
   },
   {
     id: 3,
-    title: "Heart Disease Prediction System",
+    title: "Heart-Hero",
     description:
       "A machine learning-based system to predict heart disease risk using patient data.",
     subDescription: [
@@ -69,7 +69,7 @@ export const myProjects = [
       "Integrated explainable AI (SHAP) to show feature impact on individual predictions.",
       "Developed a user-friendly interactive UI for entering patient parameters and viewing results."
     ],
-    href: "https://github.com/Arijit2175/Heart-Disease-Prediction",
+    href: "https://github.com/Arijit2175/Heart-Hero",
     logo: "",
     image: "/assets/projects/heart.png",
     tags: [
@@ -128,38 +128,43 @@ export const myProjects = [
   },
   {
     id: 5,
-    title: "Custom Web-Server in PHP",
+    title: "Quant-Pair",
     description:
-      "A custom multi-client, socket-based web server written entirely in PHP.",
+      "A statistical pair trading and cointegration analysis tool for financial markets.",
     subDescription: [
-      "Custom multi-client web server built in PHP using low-level socket programming.",
-      "Supports static file serving, routing, uploads/downloads, and MIME handling.",
-      "Non-blocking sockets with logging for concurrent request processing.",
-      "Demonstrates core HTTP and server-side networking fundamentals beyond Apache/Nginx.",
+      "Identifies cointegrated stock pairs using historical price data..",
+      "Generates trade signals based on Z-score and mean reversion.",
+      "Calculates hedge ratios for beta-neutral pair trades.",
+      "Visualizes spread, price trends, and performance metrics.",
     ],
-    href: "https://github.com/Arijit2175/Web-Server-php",
+    href: "https://github.com/Arijit2175/QuantPair",
     logo: "",
     image: "/assets/projects/quantpair.png",
     tags: [
       {
         id: 1,
-        name: "PHP",
-        path: "/assets/logos/php.svg",
+        name: "Python",
+        path: "/assets/logos/Python.svg",
       },
       {
         id: 2,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
+        name: "Pandas",
+        path: "/assets/logos/pandas.svg",
       },
       {
         id: 3,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
+        name: "Numpy",
+        path: "/assets/logos/numpy.svg",
       },
       {
         id: 4,
-        name: "Javascript",
-        path: "/assets/logos/javascript.svg",
+        name: "React",
+        path: "/assets/logos/react.svg",
+      },
+      {
+        id: 5,
+        name: "TailwindCss",
+        path: "/assets/logos/tailwindcss.svg",
       },
     ],
   },
