@@ -139,7 +139,7 @@ export const myProjects = [
     ],
     href: "https://github.com/Arijit2175/Web-Server-php",
     logo: "",
-    image: "/assets/projects/webserver.png",
+    image: "/assets/projects/quantpair.png",
     tags: [
       {
         id: 1,
