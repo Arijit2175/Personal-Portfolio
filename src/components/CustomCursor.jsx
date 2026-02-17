@@ -41,9 +41,9 @@ const CustomCursor = () => {
       <motion.div
         className="pointer-events-none fixed z-[9999] mix-blend-difference"
         animate={{
-          x: mousePosition.x - 8,
-          y: mousePosition.y - 8,
-          scale: isHovering ? 1.5 : 1,
+          x: mousePosition.x - 6,
+          y: mousePosition.y - 6,
+          scale: isHovering ? 1.3 : 1,
         }}
         transition={{
           type: 'spring',
@@ -53,7 +53,7 @@ const CustomCursor = () => {
         }}
       >
         <div
-          className={`h-4 w-4 rounded-full transition-all duration-200 ${
+          className={`h-3 w-3 rounded-full transition-all duration-200 ${
             isHovering ? 'bg-white' : 'bg-white'
           }`}
         />
@@ -63,9 +63,9 @@ const CustomCursor = () => {
       <motion.div
         className="pointer-events-none fixed z-[9998] mix-blend-difference"
         animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
-          scale: isHovering ? 1.8 : 1,
+          x: mousePosition.x - 12,
+          y: mousePosition.y - 12,
+          scale: isHovering ? 1.5 : 1,
           opacity: isHovering ? 0.5 : 0.3,
         }}
         transition={{
@@ -75,7 +75,7 @@ const CustomCursor = () => {
           mass: 0.1,
         }}
       >
-        <div className="h-10 w-10 rounded-full border-2 border-white" />
+        <div className="h-6 w-6 rounded-full border-2 border-white" />
       </motion.div>
     </>
   );
