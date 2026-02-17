@@ -12,13 +12,10 @@ const About = () => {
         <div className="grid grid-cols-1 gap-4  md:grid-cols-6 md:auto-rows-[18rem] mt-12">
             {/* Grid 1 */}
             <div className="flex items-end grid-default-color grid-1">
-                <div className="relative flex justify-center items-center w-full h-48 md:h-64 lg:h-72">
-                  <img
-                    src="assets/coding-pov.gif"
-                    className="object-contain h-full rounded-xl shadow-lg"
-                    alt="Coding POV"
-                  />
-                </div>
+                <img
+            src="assets/coding-pov.gif"
+            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+          />
           <div className="z-10">
             <p className="headtext">Hi, I'm Arijit Karmakar</p>
             <p className="subtext">
