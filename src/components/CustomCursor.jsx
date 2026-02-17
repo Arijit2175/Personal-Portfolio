@@ -63,8 +63,8 @@ const CustomCursor = () => {
       <motion.div
         className="pointer-events-none fixed z-[9998] mix-blend-difference"
         animate={{
-          x: mousePosition.x - 12,
-          y: mousePosition.y - 12,
+          x: mousePosition.x - 16,
+          y: mousePosition.y - 16,
           scale: isHovering ? 1.5 : 1,
           opacity: isHovering ? 0.5 : 0.3,
         }}
@@ -75,7 +75,7 @@ const CustomCursor = () => {
           mass: 0.1,
         }}
       >
-        <div className="h-6 w-6 rounded-full border-2 border-white" />
+        <div className="h-8 w-8 rounded-full border-2 border-white" />
       </motion.div>
     </>
   );
