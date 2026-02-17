@@ -18,7 +18,7 @@ const About = () => {
           />
           <div className="z-10">
             <p className="headtext">Hi, I'm Arijit Karmakar</p>
-            <p className="subtext">
+            <p className="subtext text-white">
               Working on developing modernistic and responsive web applications
               that provide excellent user experiences.
             </p>
