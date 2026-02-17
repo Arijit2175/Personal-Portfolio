@@ -166,6 +166,11 @@ export const myProjects = [
         name: "TailwindCss",
         path: "/assets/logos/tailwindcss.svg",
       },
+      {
+        id: 6,
+        name: "YFinance",
+        path: "/assets/logos/yahoo.png",
+      },
     ],
   },
   {
