@@ -1,33 +1,43 @@
 export const myProjects = [
   {
     id: 1,
-    title: "Restaurant Platform",
+    title: "EduSphere",
     description:
-      "An interactive single-page restaurant website that showcases a modern dining brand",
+      "A full-stack educational platform for managing courses, students, and academic activities.",
     subDescription: [
-      "Responsive restaurant website built with HTML, CSS, and JavaScript.",
-      "Smooth navigation with dark/light mode, sticky header, and scroll effects.",
-      "Clean sectioned layout with animations for engaging visuals.",
-      "Mobile-optimized design with smooth scrolling and theme persistence.",
+      "Centralized system for managing student profiles, courses, and academic records.",
+      "Admin dashboard for handling registrations, course management, and performance tracking.",
+      "Secure authentication and role-based access for students and administrators.",
+      "Interactive web interface for monitoring progress and managing learning activities.",
     ],
-    href: "https://github.com/Arijit2175/Restaurant-Website",
+    href: "https://github.com/Arijit2175/EduSphere",
     logo: "",
-    image: "/assets/projects/restaurant.png",
+    image: "/assets/projects/edusphere.png",
     tags: [
       {
         id: 1,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
+        name: "React",
+        path: "/assets/logos/react.svg",
       },
       {
         id: 2,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
+        name: "Material UI",
+        path: "/assets/logos/mui.svg",
       },
       {
         id: 3,
-        name: "Javascript",
-        path: "/assets/logos/javascript.svg",
+        name: "Shadcn UI",
+        path: "/assets/logos/shadcn.svg",
+      },
+      {
+        id: 4,
+        name: "Vite",
+        path: "/assets/logos/vitejs.svg",
+      },
+      {
+        id: 5,
+        name: "Python",
+        path: "/assets/logos/Python.svg",
       },
     ],
   },
