@@ -6,6 +6,7 @@ const FULL_NAME = "Arijit Karmakar";
 
 const Landing = ({ onEnter }) => {
   const [typedName, setTypedName] = useState("");
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
   const isTyping = typedName.length < FULL_NAME.length;
 
   useEffect(() => {
@@ -77,6 +78,8 @@ const Landing = ({ onEnter }) => {
         <motion.button
           type="button"
           onClick={onEnter}
+          onMouseEnter={() => setIsButtonHovered(true)}
+          onMouseLeave={() => setIsButtonHovered(false)}
           className="landing-button"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -84,7 +87,7 @@ const Landing = ({ onEnter }) => {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
-          Embark On An Adventure
+          {isButtonHovered ? "Get Ready!" : "Embark On An Adventure"}
         </motion.button>
       </motion.div>
     </section>
