@@ -1,11 +1,13 @@
 import createGlobe from "cobe";
 import { useMotionValue, useSpring } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import CertificateDetails from "../components/CertificateDetails";
 import { certificates } from "../constants";
 
 const MOVEMENT_DAMPING = 1400;
 const BASE_THETA = 0.3;
 const AUTO_ROTATION_SPEED = 0.004;
+const MARKER_RADIUS = 41;
 
 const projectMarker = (location, phi, theta) => {
   const [lat, lon] = location;
@@ -25,7 +27,7 @@ const projectMarker = (location, phi, theta) => {
   return {
     x: x1,
     y: y2,
-    visible: z2 > -0.05,
+    visible: z2 > -0.03,
   };
 };
 
@@ -37,6 +39,7 @@ const Certificates = () => {
   const frameRef = useRef(0);
 
   const [activeId, setActiveId] = useState(certificates[0]?.id ?? null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [points, setPoints] = useState([]);
 
   const activeCertificate = useMemo(
@@ -74,9 +77,12 @@ const Certificates = () => {
 
           return {
             id: certificate.id,
-            visible: projected.visible,
-            left: `${50 + projected.x * 44}%`,
-            top: `${50 - projected.y * 44}%`,
+            visible:
+              projected.visible &&
+              Math.sqrt(projected.x * projected.x + projected.y * projected.y) <=
+                0.94,
+            left: `${50 + projected.x * MARKER_RADIUS}%`,
+            top: `${50 - projected.y * MARKER_RADIUS}%`,
           };
         })
       );
@@ -145,6 +151,11 @@ const Certificates = () => {
     }
   };
 
+  const openCertificate = (id) => {
+    setActiveId(id);
+    setIsModalOpen(true);
+  };
+
   return (
     <section className="c-space section-spacing" id="certificates">
       <h2 className="text-heading">Certificates</h2>
@@ -152,8 +163,8 @@ const Certificates = () => {
         Click on the highlighted points for more info.
       </p>
 
-      <div className="grid items-start grid-cols-1 gap-8 mt-10 lg:grid-cols-2">
-        <div className="relative w-full max-w-[36rem] mx-auto">
+      <div className="mt-10">
+        <div className="relative w-full max-w-[36rem] mx-auto overflow-hidden rounded-full">
           <canvas
             ref={canvasRef}
             className="w-full transition-opacity duration-500 opacity-0 aspect-square [contain:layout_paint_size]"
@@ -161,6 +172,12 @@ const Certificates = () => {
             onPointerUp={() => updatePointerInteraction(null)}
             onPointerOut={() => updatePointerInteraction(null)}
             onMouseMove={(event) => updateMovement(event.clientX)}
+            onTouchStart={(event) => {
+              if (event.touches[0]) {
+                updatePointerInteraction(event.touches[0].clientX);
+              }
+            }}
+            onTouchEnd={() => updatePointerInteraction(null)}
             onTouchMove={(event) => {
               if (event.touches[0]) {
                 updateMovement(event.touches[0].clientX);
@@ -173,15 +190,15 @@ const Certificates = () => {
               <button
                 key={point.id}
                 type="button"
-                onClick={() => setActiveId(point.id)}
-                className={`pointer-events-auto absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white transition-all duration-200 ${
+                onClick={() => openCertificate(point.id)}
+                className={`pointer-events-auto absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white transition-all duration-200 ${
                   point.visible
                     ? "opacity-100"
                     : "opacity-0"
                 } ${
                   activeId === point.id
-                    ? "scale-125 bg-white shadow-[0_0_20px_rgba(255,255,255,0.9)]"
-                    : "bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.5)]"
+                    ? "scale-110 bg-white shadow-[0_0_20px_rgba(255,255,255,0.95)]"
+                    : "bg-white/85 shadow-[0_0_10px_rgba(255,255,255,0.6)]"
                 }`}
                 style={{ left: point.left, top: point.top }}
                 aria-label={`View certificate ${point.id}`}
@@ -189,36 +206,14 @@ const Certificates = () => {
             ))}
           </div>
         </div>
-
-        {activeCertificate && (
-          <div className="p-5 border rounded-2xl border-white/10 bg-midnight">
-            <img
-              src={activeCertificate.image}
-              alt={activeCertificate.title}
-              className="object-cover w-full mb-4 rounded-xl h-52"
-            />
-            <div className="flex items-center gap-3 mb-3">
-              <img
-                src={activeCertificate.logo}
-                alt={activeCertificate.organization}
-                className="w-10 h-10 p-1 rounded-lg bg-white/10"
-              />
-              <div>
-                <h3 className="text-xl font-semibold text-white">
-                  {activeCertificate.title}
-                </h3>
-                <p className="text-sm text-neutral-400">
-                  {activeCertificate.organization} | {activeCertificate.country}
-                </p>
-              </div>
-            </div>
-            <p className="mb-3 text-sm text-neutral-400 md:text-base">
-              {activeCertificate.description}
-            </p>
-            <p className="text-sm text-neutral-500">Issued: {activeCertificate.issued}</p>
-          </div>
-        )}
       </div>
+
+      {isModalOpen && activeCertificate && (
+        <CertificateDetails
+          certificate={activeCertificate}
+          closeModal={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 };
