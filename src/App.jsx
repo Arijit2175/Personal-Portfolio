@@ -114,10 +114,10 @@ const App = () => {
         ) : view === 'departing' ? (
           <motion.div
             key="departing"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
+            initial={{ scale: 1 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.998 }}
+            transition={{ duration: 0.28, ease: 'easeOut' }}
           >
             <Landing onEnter={handleEnterPortfolio} isDeparting />
             <HyperspaceTransition phase="prep" />
@@ -125,10 +125,10 @@ const App = () => {
         ) : view === 'jump' ? (
           <motion.div
             key="jump"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            initial={{ scale: 1.004 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 1 }}
+            transition={{ duration: 0.32, ease: 'easeOut' }}
           >
             <HyperspaceTransition phase="warp" />
           </motion.div>

@@ -48,9 +48,9 @@ const HyperspaceTransition = ({ phase = 'warp' }) => {
             style={{
               '--streak-angle': streak.angle,
               '--streak-distance': streak.distance,
+              '--streak-opacity': streak.opacity,
               width: streak.width,
               height: streak.height,
-              opacity: streak.opacity,
               animationDelay: streak.delay,
               animationDuration: streak.duration,
             }}
