@@ -273,8 +273,8 @@ export const experiences = [
 export const education = [
   {
     title: "Bachelor's Degree",
-    job: "Add your college or university name",
-    date: "YYYY - Present",
+    job: "Institute of Aeronautical Engineering, Hyderabad",
+    date: "2023 - Present",
     contents: [
       "Pursuing core coursework in computer science, software engineering, and problem solving.",
       "Built hands-on projects across web development, machine learning, and system design.",
@@ -282,12 +282,21 @@ export const education = [
     ],
   },
   {
-    title: "Higher Secondary",
-    job: "Add your school name",
-    date: "YYYY - YYYY",
+    title: "Intermediate Education",
+    job: "Sri Chaitanya Junior Kala Sala, Hyderabad",
+    date: "2021 - 2023",
     contents: [
       "Completed higher secondary education with a focus on foundational science and mathematics.",
       "Strengthened analytical thinking and programming fundamentals for engineering studies.",
+    ],
+  },
+  {
+    title: "Higher Secondary",
+    job: "Bharatiya Vidya Bhavans Public School, Hyderabad",
+    date: "2013 - 2021",
+    contents: [
+      "Completed secondary education with a strong emphasis on science, mathematics and communication.",
+      "Participated in various extracurricular activities, fostering teamwork and leadership skills.",
     ],
   },
 ];
