@@ -145,3 +145,129 @@ body {
 .field-input-focus {
   @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20;
 }
+
+/* Landing Section */
+.landing-root {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 20% 25%, rgba(51, 194, 204, 0.2) 0%, rgba(6, 9, 31, 0) 38%),
+    radial-gradient(circle at 78% 32%, rgba(122, 87, 219, 0.18) 0%, rgba(6, 9, 31, 0) 35%),
+    linear-gradient(165deg, #02030d 0%, #06091f 45%, #090d2b 100%);
+}
+
+.landing-nebula {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  opacity: 0.45;
+  pointer-events: none;
+  animation: drift 12s ease-in-out infinite;
+}
+
+.landing-nebula-left {
+  width: 320px;
+  height: 320px;
+  left: -90px;
+  top: 20%;
+  background: rgba(51, 194, 204, 0.28);
+}
+
+.landing-nebula-right {
+  width: 380px;
+  height: 380px;
+  right: -140px;
+  top: 12%;
+  background: rgba(122, 87, 219, 0.28);
+  animation-delay: 2s;
+}
+
+.landing-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.landing-star {
+  position: absolute;
+  border-radius: 9999px;
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+  animation-name: twinkle;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.landing-intro {
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.landing-title {
+  font-size: clamp(2.2rem, 8vw, 5.4rem);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+.landing-subtitle {
+  max-width: 42rem;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
+}
+
+.landing-button {
+  margin-top: 2rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient(100deg, rgba(51, 194, 204, 0.35), rgba(122, 87, 219, 0.32));
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.landing-button:hover {
+  box-shadow: 0 10px 38px rgba(51, 194, 204, 0.28);
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(0.7);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(20px, -20px, 0);
+  }
+}
