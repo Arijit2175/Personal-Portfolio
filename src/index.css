@@ -210,7 +210,7 @@ body {
   margin-bottom: 0.75rem;
   text-transform: uppercase;
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(163, 163, 163, 0.95);
 }
 
 .landing-title {
@@ -223,25 +223,20 @@ body {
 
 .landing-title-text {
   display: inline-block;
-  background: linear-gradient(90deg, #ffffff 10%, #a9f0ff 45%, #d8cdff 65%, #ffffff 100%);
-  background-size: 220% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: name-sweep 8s linear infinite;
+  color: #ffffff;
 }
 
 .landing-caret {
   display: inline-block;
   margin-left: 0.18em;
-  color: rgba(163, 237, 255, 0.95);
+  color: rgba(255, 255, 255, 0.85);
   animation: caret-blink 1s steps(1, end) infinite;
 }
 
 .landing-subtitle {
   max-width: 42rem;
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.76);
+  color: rgba(163, 163, 163, 0.95);
   font-size: clamp(0.95rem, 2.2vw, 1.2rem);
 }
 
