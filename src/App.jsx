@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
@@ -14,9 +14,25 @@ import Landing from './sections/Landing'
 const App = () => {
   const [hasEntered, setHasEntered] = useState(false)
 
-  const handleReturnToLanding = () => {
-    setHasEntered(false)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+  useEffect(() => {
+    window.history.replaceState({ view: 'landing' }, '')
+
+    const handlePopState = (event) => {
+      const isPortfolioView = event.state?.view === 'portfolio'
+      setHasEntered(isPortfolioView)
+
+      if (!isPortfolioView) {
+        window.scrollTo({ top: 0, behavior: 'auto' })
+      }
+    }
+
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const handleEnterPortfolio = () => {
+    setHasEntered(true)
+    window.history.pushState({ view: 'portfolio' }, '')
   }
 
   return (
@@ -31,7 +47,7 @@ const App = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Landing onEnter={() => setHasEntered(true)} />
+            <Landing onEnter={handleEnterPortfolio} />
           </motion.div>
         ) : (
           <motion.div
@@ -40,13 +56,6 @@ const App = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
           >
-            <button
-              type="button"
-              onClick={handleReturnToLanding}
-              className="landing-return-button"
-            >
-              Back To Landing
-            </button>
             <div className="container mx-auto max-w-7xl">
               <Navbar />
               <Hero />

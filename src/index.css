@@ -283,27 +283,6 @@ body {
     0 0 78px rgba(184, 115, 255, 0.62);
 }
 
-.landing-return-button {
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 60;
-  padding: 0.65rem 1rem;
-  border-radius: 9999px;
-  border: 1px solid rgba(168, 255, 251, 0.65);
-  background: rgba(6, 9, 31, 0.72);
-  color: #ffffff;
-  font-size: 0.82rem;
-  letter-spacing: 0.03em;
-  backdrop-filter: blur(8px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.landing-return-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px rgba(126, 235, 255, 0.42);
-}
-
 @keyframes drift {
   0%,
   100% {
