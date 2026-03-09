@@ -330,63 +330,86 @@ body {
   z-index: 80;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 48%, rgba(80, 210, 255, 0.12) 0%, rgba(6, 9, 31, 0.95) 48%),
+    radial-gradient(circle at 50% 50%, rgba(100, 230, 255, 0.18) 0%, rgba(6, 9, 31, 0.94) 44%),
     linear-gradient(160deg, #02030d 0%, #06091f 60%, #090d2b 100%);
 }
 
 .hyperspace-vignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(2, 3, 13, 0) 25%, rgba(2, 3, 13, 0.82) 100%);
+  background: radial-gradient(circle at center, rgba(2, 3, 13, 0) 22%, rgba(2, 3, 13, 0.86) 100%);
 }
 
 .hyperspace-streak-layer {
   position: absolute;
   inset: 0;
-  filter: blur(0.4px);
+  filter: blur(0.2px);
 }
 
 .hyperspace-streak {
   position: absolute;
-  left: -35%;
+  left: 50%;
+  top: 50%;
   border-radius: 9999px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(155, 240, 255, 0.96), rgba(255, 255, 255, 0));
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(165, 244, 255, 1), rgba(255, 255, 255, 0));
+  box-shadow: 0 0 8px rgba(165, 244, 255, 0.9), 0 0 20px rgba(165, 244, 255, 0.55);
   animation-name: hyperspace-streak;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.27, 0.62, 0.39, 0.98);
+  animation-timing-function: cubic-bezier(0.2, 0.75, 0.35, 1);
+}
+
+.hyperspace-turbulence {
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 45% 52%, rgba(97, 237, 255, 0.22) 0%, rgba(97, 237, 255, 0) 34%),
+    radial-gradient(circle at 56% 46%, rgba(138, 120, 255, 0.18) 0%, rgba(138, 120, 255, 0) 30%);
+  mix-blend-mode: screen;
+  animation: hyperspace-turbulence 0.22s steps(2, end) infinite;
+}
+
+.hyperspace-rings {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(126, 244, 255, 0.28) 0%, rgba(126, 244, 255, 0) 15%),
+    radial-gradient(circle at center, rgba(126, 244, 255, 0.22) 0%, rgba(126, 244, 255, 0) 28%),
+    radial-gradient(circle at center, rgba(167, 122, 255, 0.16) 0%, rgba(167, 122, 255, 0) 42%);
+  animation: hyperspace-rings 1.7s ease-out forwards;
 }
 
 .hyperspace-core {
   position: absolute;
   left: 50%;
   top: 50%;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   transform: translate(-50%, -50%);
   border-radius: 9999px;
   background: #e7ffff;
-  box-shadow: 0 0 22px rgba(147, 238, 255, 0.9), 0 0 70px rgba(147, 238, 255, 0.62);
-  animation: hyperspace-core 1.7s ease-in-out forwards;
+  box-shadow: 0 0 30px rgba(147, 238, 255, 1), 0 0 96px rgba(147, 238, 255, 0.78);
+  animation: hyperspace-core 1.7s cubic-bezier(0.18, 0.72, 0.26, 1) forwards;
 }
 
 .hyperspace-flash {
   position: absolute;
   inset: 0;
   opacity: 0;
-  background: radial-gradient(circle at center, rgba(210, 248, 255, 0.9), rgba(210, 248, 255, 0));
+  background: radial-gradient(circle at center, rgba(224, 251, 255, 0.98), rgba(224, 251, 255, 0));
   animation: hyperspace-flash 1.7s ease-in forwards;
 }
 
 @keyframes hyperspace-streak {
   0% {
-    transform: translate3d(0, 0, 0) scaleX(0.15);
+    transform: rotate(var(--streak-angle)) translateX(0) scaleX(0.08);
     opacity: 0;
   }
-  20% {
-    opacity: 0.85;
+  12% {
+    opacity: 0.95;
   }
   100% {
-    transform: translate3d(180vw, 0, 0) scaleX(1.2);
+    transform: rotate(var(--streak-angle)) translateX(var(--streak-distance)) scaleX(2.4);
     opacity: 0;
   }
 }
@@ -395,24 +418,44 @@ body {
   0% {
     transform: translate(-50%, -50%) scale(1);
   }
-  60% {
-    transform: translate(-50%, -50%) scale(6);
+  65% {
+    transform: translate(-50%, -50%) scale(7);
   }
   100% {
-    transform: translate(-50%, -50%) scale(20);
+    transform: translate(-50%, -50%) scale(28);
     opacity: 0;
   }
 }
 
 @keyframes hyperspace-flash {
   0%,
-  68% {
+  62% {
     opacity: 0;
   }
-  86% {
-    opacity: 0.95;
+  84% {
+    opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes hyperspace-rings {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+@keyframes hyperspace-turbulence {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(-8px, 6px, 0) rotate(1.4deg);
   }
 }
