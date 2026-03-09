@@ -4,7 +4,7 @@ import { Particles } from "../components/Particles";
 
 const FULL_NAME = "Arijit Karmakar";
 
-const Landing = ({ onEnter }) => {
+const Landing = ({ onEnter, isDeparting = false }) => {
   const [typedName, setTypedName] = useState("");
   const [isButtonHovered, setIsButtonHovered] = useState(false);
   const isTyping = typedName.length < FULL_NAME.length;
@@ -23,7 +23,7 @@ const Landing = ({ onEnter }) => {
   }, []);
 
   return (
-    <section className="landing-root">
+    <section className={`landing-root ${isDeparting ? "landing-root-departing" : ""}`}>
       <Particles
         className="landing-particles"
         quantity={140}
@@ -78,6 +78,7 @@ const Landing = ({ onEnter }) => {
         <motion.button
           type="button"
           onClick={onEnter}
+          disabled={isDeparting}
           onMouseEnter={() => setIsButtonHovered(true)}
           onMouseLeave={() => setIsButtonHovered(false)}
           className="landing-button"

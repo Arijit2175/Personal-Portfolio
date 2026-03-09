@@ -11,11 +11,13 @@ import CustomCursor from './components/CustomCursor'
 import HyperspaceTransition from './components/HyperspaceTransition'
 import Landing from './sections/Landing'
 
+const DEPARTURE_DURATION_MS = 950
 const TRANSITION_DURATION_MS = 2800
 
 const App = () => {
   const [view, setView] = useState('landing')
   const viewRef = useRef('landing')
+  const departureTimerRef = useRef(null)
   const transitionTimerRef = useRef(null)
 
   useEffect(() => {
@@ -25,12 +27,34 @@ const App = () => {
   useEffect(() => {
     window.history.replaceState({ view: 'landing' }, '')
 
-    const startJumpTo = (targetView) => {
+    const clearTimers = () => {
+      if (departureTimerRef.current) {
+        window.clearTimeout(departureTimerRef.current)
+        departureTimerRef.current = null
+      }
       if (transitionTimerRef.current) {
         window.clearTimeout(transitionTimerRef.current)
+        transitionTimerRef.current = null
+      }
+    }
+
+    const startJumpTo = (targetView, withDeparture = false) => {
+      clearTimers()
+
+      if (withDeparture) {
+        setView('departing')
+        departureTimerRef.current = window.setTimeout(() => {
+          setView('jump')
+          departureTimerRef.current = null
+        }, DEPARTURE_DURATION_MS)
+      } else {
+        setView('jump')
       }
 
-      setView('jump')
+      const totalDuration = withDeparture
+        ? DEPARTURE_DURATION_MS + TRANSITION_DURATION_MS
+        : TRANSITION_DURATION_MS
+
       transitionTimerRef.current = window.setTimeout(() => {
         setView(targetView)
         transitionTimerRef.current = null
@@ -38,7 +62,7 @@ const App = () => {
         if (targetView === 'landing') {
           window.scrollTo({ top: 0, behavior: 'auto' })
         }
-      }, TRANSITION_DURATION_MS)
+      }, totalDuration)
     }
 
     const handlePopState = (event) => {
@@ -50,9 +74,7 @@ const App = () => {
 
     window.addEventListener('popstate', handlePopState)
     return () => {
-      if (transitionTimerRef.current) {
-        window.clearTimeout(transitionTimerRef.current)
-      }
+      clearTimers()
       window.removeEventListener('popstate', handlePopState)
     }
   }, [])
@@ -61,20 +83,29 @@ const App = () => {
     if (view !== 'landing') return
 
     window.history.pushState({ view: 'portfolio' }, '')
-    setView('jump')
+
+    setView('departing')
+    departureTimerRef.current = window.setTimeout(() => {
+      setView('jump')
+      departureTimerRef.current = null
+    }, DEPARTURE_DURATION_MS)
+
     transitionTimerRef.current = window.setTimeout(() => {
       setView('portfolio')
       transitionTimerRef.current = null
-    }, TRANSITION_DURATION_MS)
+    }, DEPARTURE_DURATION_MS + TRANSITION_DURATION_MS)
   }
 
   return (
     <>
       <CustomCursor />
-      {view === 'landing' ? (
-        <Landing onEnter={handleEnterPortfolio} />
+      {view === 'landing' || view === 'departing' ? (
+        <>
+          <Landing onEnter={handleEnterPortfolio} isDeparting={view === 'departing'} />
+          {view === 'departing' && <HyperspaceTransition phase="prep" />}
+        </>
       ) : view === 'jump' ? (
-        <HyperspaceTransition />
+        <HyperspaceTransition phase="warp" />
       ) : (
         <div className="container mx-auto max-w-7xl">
           <Navbar />
