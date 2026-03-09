@@ -8,6 +8,19 @@ const AUTO_ROTATION_SPEED = 0.0012;
 const COLOR_CYCLE_SECONDS = 6;
 const MAP_BRIGHTNESS = 1.7;
 
+const FALLBACK_MARKER_LOCATIONS = [
+  [40.7128, -74.006],
+  [51.5074, -0.1278],
+  [48.8566, 2.3522],
+  [19.076, 72.8777],
+  [35.6762, 139.6503],
+  [-33.8688, 151.2093],
+  [1.3521, 103.8198],
+  [52.52, 13.405],
+  [37.7749, -122.4194],
+  [-23.5505, -46.6333],
+];
+
 const COLOR_THEMES = [
   {
     baseColor: [0.9, 0.95, 1],
@@ -39,6 +52,14 @@ const lerpColor = (start, end, amount) => [
   lerp(start[2], end[2], amount),
 ];
 
+const resolveMarkerLocation = (certificate, index) => {
+  if (Array.isArray(certificate.location) && certificate.location.length === 2) {
+    return certificate.location;
+  }
+
+  return FALLBACK_MARKER_LOCATIONS[index % FALLBACK_MARKER_LOCATIONS.length];
+};
+
 const Certificates = () => {
   const sectionRef = useRef(null);
   const canvasRef = useRef(null);
@@ -56,10 +77,10 @@ const Certificates = () => {
 
   const markers = useMemo(
     () =>
-      certificates.map((certificate) => ({
-        location: certificate.location,
-        size: 0.06,
-      })),
+      certificates.map((certificate, index) => ({
+          location: resolveMarkerLocation(certificate, index),
+          size: 0.06,
+        })),
     []
   );
 
@@ -73,6 +94,10 @@ const Certificates = () => {
   });
 
   useEffect(() => {
+    if (!canvasRef.current) {
+      return undefined;
+    }
+
     const resize = () => {
       if (canvasRef.current) {
         widthRef.current = canvasRef.current.offsetWidth;
@@ -132,13 +157,14 @@ const Certificates = () => {
       },
     });
 
-    setTimeout(() => {
+    const opacityTimer = setTimeout(() => {
       if (canvasRef.current) {
         canvasRef.current.style.opacity = "1";
       }
     }, 0);
 
     return () => {
+      clearTimeout(opacityTimer);
       globe.destroy();
       window.removeEventListener("resize", resize);
     };
@@ -192,7 +218,8 @@ const Certificates = () => {
                     <div>
                       <h3 className="text-xl font-semibold text-white">{certificate.title}</h3>
                       <p className="text-sm text-neutral-400">
-                        {certificate.organization} | {certificate.country}
+                        {certificate.organization}
+                        {certificate.country ? ` | ${certificate.country}` : ""}
                       </p>
                     </div>
                   </div>

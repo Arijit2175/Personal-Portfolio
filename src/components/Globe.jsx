@@ -66,6 +66,10 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
   };
 
   useEffect(() => {
+    if (!canvasRef.current) {
+      return undefined;
+    }
+
     const onResize = () => {
       if (canvasRef.current) {
         width = canvasRef.current.offsetWidth;
@@ -87,8 +91,14 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       },
     });
 
-    setTimeout(() => (canvasRef.current.style.opacity = "1"), 0);
+    const opacityTimer = setTimeout(() => {
+      if (canvasRef.current) {
+        canvasRef.current.style.opacity = "1";
+      }
+    }, 0);
+
     return () => {
+      clearTimeout(opacityTimer);
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };

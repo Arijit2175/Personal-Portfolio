@@ -306,6 +306,8 @@ export const certificates = [
     id: 1,
     title: "Web Development Fundamentals",
     organization: "IBM",
+    country: "United States",
+    location: [41.8781, -87.6298],
     issued: "Jan 2026",
     description:
       "Focused on core web development technologies, including HTML, CSS, JavaScript, and responsive design principles for building modern web applications.",
@@ -316,6 +318,8 @@ export const certificates = [
     id: 2,
     title: "Artificial Intelligence Fundamentals",
     organization: "IBM",
+    country: "United States",
+    location: [41.8781, -87.6298],
     issued: "Jan 2026",
     description:
       "Covered AI basics, machine learning concepts, neural networks, and real-world AI applications across industries.",
@@ -326,6 +330,8 @@ export const certificates = [
     id: 3,
     title: "AWS Cloud Practitioner Essentials",
     organization: "Amazon Web Services",
+    country: "United States",
+    location: [47.6062, -122.3321],
     issued: "Sep 2025",
     description:
       "Covered cloud fundamentals, AWS core services, security basics, pricing models, and real-world cloud use cases.",
@@ -336,6 +342,8 @@ export const certificates = [
     id: 4,
     title: "Security Principles in Cloud Computing",
     organization: "Google",
+    country: "United States",
+    location: [37.422, -122.0841],
     issued: "Jul 2025",
     description:
       "Focused on cloud security fundamentals, identity and access management, data protection, and secure architecture design.",
@@ -346,6 +354,8 @@ export const certificates = [
     id: 5,
     title: "Generative AI",
     organization: "Google",
+    country: "United States",
+    location: [37.422, -122.0841],
     issued: "Mar 2025",
     description:
       "Explored generative AI concepts, techniques, and applications, including language models, image generation, and ethical considerations.",
