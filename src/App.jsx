@@ -4,6 +4,7 @@ import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
 import Projects from './sections/Projects'
+import Education from './sections/Education'
 import Experiences from './sections/Experiences'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
@@ -145,6 +146,7 @@ const App = () => {
               <Hero />
               <About />
               <Projects />
+              <Education />
               <Experiences />
               <Skills />
               <Contact />

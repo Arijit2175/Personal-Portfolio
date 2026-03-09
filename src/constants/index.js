@@ -269,6 +269,28 @@ export const experiences = [
     ],
   }
 ];
+
+export const education = [
+  {
+    title: "Bachelor's Degree",
+    job: "Add your college or university name",
+    date: "YYYY - Present",
+    contents: [
+      "Pursuing core coursework in computer science, software engineering, and problem solving.",
+      "Built hands-on projects across web development, machine learning, and system design.",
+      "Actively improving skills in full stack development, algorithms, and software architecture.",
+    ],
+  },
+  {
+    title: "Higher Secondary",
+    job: "Add your school name",
+    date: "YYYY - YYYY",
+    contents: [
+      "Completed higher secondary education with a focus on foundational science and mathematics.",
+      "Strengthened analytical thinking and programming fundamentals for engineering studies.",
+    ],
+  },
+];
 export const skill = [
   {
     name: "Python",
