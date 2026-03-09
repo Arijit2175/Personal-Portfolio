@@ -68,7 +68,13 @@ const App = () => {
     }
 
     const handlePopState = (event) => {
-      const targetView = event.state?.view === 'portfolio' ? 'portfolio' : 'landing'
+      const stateView = event.state?.view
+
+      if (stateView !== 'landing' && stateView !== 'portfolio') {
+        if (viewRef.current === 'portfolio') return
+      }
+
+      const targetView = stateView === 'portfolio' ? 'portfolio' : 'landing'
       if (targetView !== viewRef.current) {
         startJumpTo(targetView)
       }
