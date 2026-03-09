@@ -11,7 +11,7 @@ import CustomCursor from './components/CustomCursor'
 import HyperspaceTransition from './components/HyperspaceTransition'
 import Landing from './sections/Landing'
 
-const TRANSITION_DURATION_MS = 1700
+const TRANSITION_DURATION_MS = 2800
 
 const App = () => {
   const [view, setView] = useState('landing')

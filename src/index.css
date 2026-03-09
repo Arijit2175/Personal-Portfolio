@@ -352,11 +352,23 @@ body {
   top: 50%;
   border-radius: 9999px;
   transform-origin: left center;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(165, 244, 255, 1), rgba(255, 255, 255, 0));
-  box-shadow: 0 0 8px rgba(165, 244, 255, 0.9), 0 0 20px rgba(165, 244, 255, 0.55);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(178, 247, 255, 1), rgba(255, 255, 255, 0));
+  box-shadow: 0 0 14px rgba(178, 247, 255, 1), 0 0 32px rgba(140, 238, 255, 0.72), 0 0 56px rgba(134, 115, 255, 0.28);
   animation-name: hyperspace-streak;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.2, 0.75, 0.35, 1);
+  animation-timing-function: linear;
+}
+
+.hyperspace-streak-near {
+  filter: blur(0.2px);
+  opacity: 1;
+  animation-name: hyperspace-streak-near;
+}
+
+.hyperspace-streak-far {
+  filter: blur(0.8px);
+  opacity: 0.75;
+  animation-name: hyperspace-streak-far;
 }
 
 .hyperspace-turbulence {
@@ -365,8 +377,32 @@ body {
   background:
     radial-gradient(circle at 45% 52%, rgba(97, 237, 255, 0.22) 0%, rgba(97, 237, 255, 0) 34%),
     radial-gradient(circle at 56% 46%, rgba(138, 120, 255, 0.18) 0%, rgba(138, 120, 255, 0) 30%);
+  opacity: 0.9;
+  filter: blur(9px) saturate(1.45);
   mix-blend-mode: screen;
-  animation: hyperspace-turbulence 0.22s steps(2, end) infinite;
+  animation: hyperspace-turbulence 0.16s steps(2, end) infinite;
+}
+
+.hyperspace-turbulence::before,
+.hyperspace-turbulence::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hyperspace-turbulence::before {
+  background:
+    radial-gradient(circle at 54% 50%, rgba(181, 247, 255, 0.24) 0%, rgba(181, 247, 255, 0) 36%),
+    radial-gradient(circle at 50% 42%, rgba(164, 140, 255, 0.2) 0%, rgba(164, 140, 255, 0) 30%);
+  animation: hyperspace-turbulence-secondary 0.22s steps(2, end) infinite;
+}
+
+.hyperspace-turbulence::after {
+  background:
+    radial-gradient(circle at 46% 57%, rgba(127, 245, 255, 0.22) 0%, rgba(127, 245, 255, 0) 34%),
+    radial-gradient(circle at 56% 44%, rgba(172, 130, 255, 0.16) 0%, rgba(172, 130, 255, 0) 26%);
+  animation: hyperspace-turbulence-tertiary 0.18s steps(2, end) infinite;
 }
 
 .hyperspace-rings {
@@ -376,7 +412,7 @@ body {
     radial-gradient(circle at center, rgba(126, 244, 255, 0.28) 0%, rgba(126, 244, 255, 0) 15%),
     radial-gradient(circle at center, rgba(126, 244, 255, 0.22) 0%, rgba(126, 244, 255, 0) 28%),
     radial-gradient(circle at center, rgba(167, 122, 255, 0.16) 0%, rgba(167, 122, 255, 0) 42%);
-  animation: hyperspace-rings 1.7s ease-out forwards;
+  animation: hyperspace-rings 2.8s ease-out forwards;
 }
 
 .hyperspace-core {
@@ -388,28 +424,48 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 9999px;
   background: #e7ffff;
-  box-shadow: 0 0 30px rgba(147, 238, 255, 1), 0 0 96px rgba(147, 238, 255, 0.78);
-  animation: hyperspace-core 1.7s cubic-bezier(0.18, 0.72, 0.26, 1) forwards;
+  box-shadow: 0 0 40px rgba(147, 238, 255, 1), 0 0 140px rgba(147, 238, 255, 0.92), 0 0 210px rgba(147, 238, 255, 0.52);
+  animation: hyperspace-core 2.8s cubic-bezier(0.2, 0.7, 0.24, 1) forwards;
 }
 
-.hyperspace-flash {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  background: radial-gradient(circle at center, rgba(224, 251, 255, 0.98), rgba(224, 251, 255, 0));
-  animation: hyperspace-flash 1.7s ease-in forwards;
-}
-
-@keyframes hyperspace-streak {
+@keyframes hyperspace-streak-near {
   0% {
     transform: rotate(var(--streak-angle)) translateX(0) scaleX(0.08);
     opacity: 0;
   }
-  12% {
-    opacity: 0.95;
+  24% {
+    transform: rotate(var(--streak-angle)) translateX(8vmax) scaleX(0.2);
+    opacity: 0.25;
+  }
+  58% {
+    transform: rotate(var(--streak-angle)) translateX(30vmax) scaleX(0.95);
+    opacity: 0.86;
+  }
+  84% {
+    transform: rotate(var(--streak-angle)) translateX(58vmax) scaleX(2.05);
+    opacity: 1;
   }
   100% {
-    transform: rotate(var(--streak-angle)) translateX(var(--streak-distance)) scaleX(2.4);
+    transform: rotate(var(--streak-angle)) translateX(var(--streak-distance)) scaleX(2.9);
+    opacity: 0;
+  }
+}
+
+@keyframes hyperspace-streak-far {
+  0% {
+    transform: rotate(var(--streak-angle)) translateX(0) scaleX(0.06);
+    opacity: 0;
+  }
+  34% {
+    transform: rotate(var(--streak-angle)) translateX(10vmax) scaleX(0.16);
+    opacity: 0.2;
+  }
+  72% {
+    transform: rotate(var(--streak-angle)) translateX(26vmax) scaleX(0.6);
+    opacity: 0.65;
+  }
+  100% {
+    transform: rotate(var(--streak-angle)) translateX(calc(var(--streak-distance) * 0.78)) scaleX(1.5);
     opacity: 0;
   }
 }
@@ -418,24 +474,14 @@ body {
   0% {
     transform: translate(-50%, -50%) scale(1);
   }
-  65% {
-    transform: translate(-50%, -50%) scale(7);
+  42% {
+    transform: translate(-50%, -50%) scale(2.1);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(10.5);
   }
   100% {
-    transform: translate(-50%, -50%) scale(28);
-    opacity: 0;
-  }
-}
-
-@keyframes hyperspace-flash {
-  0%,
-  62% {
-    opacity: 0;
-  }
-  84% {
-    opacity: 1;
-  }
-  100% {
+    transform: translate(-50%, -50%) scale(34);
     opacity: 0;
   }
 }
@@ -453,9 +499,31 @@ body {
 
 @keyframes hyperspace-turbulence {
   0% {
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   100% {
-    transform: translate3d(-8px, 6px, 0) rotate(1.4deg);
+    transform: translate3d(-12px, 9px, 0) rotate(1.6deg) scale(1.04);
+  }
+}
+
+@keyframes hyperspace-turbulence-secondary {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate3d(10px, -8px, 0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes hyperspace-turbulence-tertiary {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate3d(-9px, 11px, 0);
+    opacity: 0.78;
   }
 }
