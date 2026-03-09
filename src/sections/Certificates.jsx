@@ -5,6 +5,38 @@ import { certificates } from "../constants";
 
 const BASE_THETA = 0.3;
 const AUTO_ROTATION_SPEED = 0.0012;
+const COLOR_CYCLE_SECONDS = 6;
+
+const COLOR_THEMES = [
+  {
+    baseColor: [0.2, 0.26, 0.48],
+    markerColor: [0.95, 0.98, 1],
+    glowColor: [0.5, 0.72, 1],
+  },
+  {
+    baseColor: [0.18, 0.42, 0.34],
+    markerColor: [0.94, 1, 0.96],
+    glowColor: [0.42, 0.9, 0.74],
+  },
+  {
+    baseColor: [0.42, 0.22, 0.46],
+    markerColor: [1, 0.94, 1],
+    glowColor: [0.85, 0.52, 1],
+  },
+  {
+    baseColor: [0.44, 0.3, 0.18],
+    markerColor: [1, 0.96, 0.9],
+    glowColor: [1, 0.72, 0.4],
+  },
+];
+
+const lerp = (start, end, amount) => start + (end - start) * amount;
+
+const lerpColor = (start, end, amount) => [
+  lerp(start[0], end[0], amount),
+  lerp(start[1], end[1], amount),
+  lerp(start[2], end[2], amount),
+];
 
 const Certificates = () => {
   const sectionRef = useRef(null);
@@ -12,6 +44,7 @@ const Certificates = () => {
   const widthRef = useRef(0);
   const scrollPhiRef = useRef(0);
   const autoPhiRef = useRef(0);
+  const colorStartTimeRef = useRef(0);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -58,11 +91,38 @@ const Certificates = () => {
       diffuse: 0.4,
       mapSamples: 16000,
       mapBrightness: 1.2,
-      baseColor: [1, 1, 1],
-      markerColor: [1, 1, 1],
-      glowColor: [1, 1, 1],
+      baseColor: COLOR_THEMES[0].baseColor,
+      markerColor: COLOR_THEMES[0].markerColor,
+      glowColor: COLOR_THEMES[0].glowColor,
       markers,
       onRender: (state) => {
+        if (!colorStartTimeRef.current) {
+          colorStartTimeRef.current = performance.now();
+        }
+
+        const elapsedSeconds =
+          (performance.now() - colorStartTimeRef.current) / 1000;
+        const cycleProgress = elapsedSeconds / COLOR_CYCLE_SECONDS;
+        const fromIndex = Math.floor(cycleProgress) % COLOR_THEMES.length;
+        const toIndex = (fromIndex + 1) % COLOR_THEMES.length;
+        const mix = cycleProgress % 1;
+
+        state.baseColor = lerpColor(
+          COLOR_THEMES[fromIndex].baseColor,
+          COLOR_THEMES[toIndex].baseColor,
+          mix
+        );
+        state.markerColor = lerpColor(
+          COLOR_THEMES[fromIndex].markerColor,
+          COLOR_THEMES[toIndex].markerColor,
+          mix
+        );
+        state.glowColor = lerpColor(
+          COLOR_THEMES[fromIndex].glowColor,
+          COLOR_THEMES[toIndex].glowColor,
+          mix
+        );
+
         autoPhiRef.current += AUTO_ROTATION_SPEED;
         state.phi = autoPhiRef.current + scrollPhiRef.current;
         state.theta = BASE_THETA;
