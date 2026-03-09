@@ -88,7 +88,7 @@ const Certificates = () => {
       <h2 className="text-heading">Certificates</h2>
 
       <div className="mt-10 space-y-8">
-        <div className="sticky top-24 z-20 w-full max-w-[30rem] mx-auto">
+        <div className="sticky top-24 z-20 w-full max-w-[27rem] mx-auto">
           <canvas
             ref={canvasRef}
             className="w-full transition-opacity duration-500 opacity-0 aspect-square [contain:layout_paint_size]"
@@ -105,8 +105,8 @@ const Certificates = () => {
                 key={certificate.id}
                 className={`flex ${
                   alignRight
-                    ? "justify-end pl-8 md:pl-28 lg:pl-44"
-                    : "justify-start pr-8 md:pr-28 lg:pr-44"
+                    ? "justify-end pl-10 md:pl-36 lg:pl-52 xl:pl-60"
+                    : "justify-start pr-10 md:pr-36 lg:pr-52 xl:pr-60"
                 }`}
               >
                 <div
