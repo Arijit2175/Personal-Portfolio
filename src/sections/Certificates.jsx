@@ -6,27 +6,28 @@ import { certificates } from "../constants";
 const BASE_THETA = 0.3;
 const AUTO_ROTATION_SPEED = 0.0012;
 const COLOR_CYCLE_SECONDS = 6;
+const MAP_BRIGHTNESS = 1.7;
 
 const COLOR_THEMES = [
   {
-    baseColor: [0.2, 0.26, 0.48],
-    markerColor: [0.95, 0.98, 1],
-    glowColor: [0.5, 0.72, 1],
+    baseColor: [0.9, 0.95, 1],
+    markerColor: [1, 1, 1],
+    glowColor: [0.78, 0.9, 1],
   },
   {
-    baseColor: [0.18, 0.42, 0.34],
-    markerColor: [0.94, 1, 0.96],
-    glowColor: [0.42, 0.9, 0.74],
+    baseColor: [0.88, 1, 0.94],
+    markerColor: [1, 1, 0.98],
+    glowColor: [0.7, 1, 0.85],
   },
   {
-    baseColor: [0.42, 0.22, 0.46],
-    markerColor: [1, 0.94, 1],
-    glowColor: [0.85, 0.52, 1],
+    baseColor: [0.95, 0.88, 1],
+    markerColor: [1, 0.98, 1],
+    glowColor: [0.92, 0.72, 1],
   },
   {
-    baseColor: [0.44, 0.3, 0.18],
-    markerColor: [1, 0.96, 0.9],
-    glowColor: [1, 0.72, 0.4],
+    baseColor: [1, 0.94, 0.84],
+    markerColor: [1, 0.99, 0.95],
+    glowColor: [1, 0.86, 0.65],
   },
 ];
 
@@ -90,7 +91,7 @@ const Certificates = () => {
       dark: 1,
       diffuse: 0.4,
       mapSamples: 16000,
-      mapBrightness: 1.2,
+      mapBrightness: MAP_BRIGHTNESS,
       baseColor: COLOR_THEMES[0].baseColor,
       markerColor: COLOR_THEMES[0].markerColor,
       glowColor: COLOR_THEMES[0].glowColor,
