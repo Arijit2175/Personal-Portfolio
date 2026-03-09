@@ -87,15 +87,15 @@ const Certificates = () => {
     <section className="c-space section-spacing" id="certificates" ref={sectionRef}>
       <h2 className="text-heading">Certificates</h2>
 
-      <div className="mt-10 space-y-8">
-        <div className="sticky top-24 z-20 w-full max-w-[27rem] mx-auto">
+      <div className="mt-8 space-y-6 md:mt-10 md:space-y-8">
+        <div className="relative z-20 w-full max-w-[18rem] mx-auto md:sticky md:top-24 md:max-w-[27rem]">
           <canvas
             ref={canvasRef}
             className="w-full transition-opacity duration-500 opacity-0 aspect-square [contain:layout_paint_size]"
           />
         </div>
 
-        <div className="space-y-7 pt-[28rem] md:pt-[32rem]">
+        <div className="pt-4 space-y-6 md:space-y-7 md:pt-[26rem] lg:pt-[28rem]">
           {certificates.map((certificate, index) => {
             const isActive = index === activeIndex;
             const alignRight = index % 2 === 0;
@@ -105,12 +105,12 @@ const Certificates = () => {
                 key={certificate.id}
                 className={`flex ${
                   alignRight
-                    ? "justify-end pl-10 md:pl-36 lg:pl-52 xl:pl-60"
-                    : "justify-start pr-10 md:pr-36 lg:pr-52 xl:pr-60"
+                    ? "justify-center md:justify-end md:pl-20 lg:pl-36 xl:pl-44"
+                    : "justify-center md:justify-start md:pr-20 lg:pr-36 xl:pr-44"
                 }`}
               >
                 <div
-                  className={`w-full max-w-sm border rounded-2xl p-5 transition-all duration-300 ${
+                  className={`w-full max-w-[22rem] sm:max-w-sm border rounded-2xl p-4 sm:p-5 transition-all duration-300 ${
                     isActive
                       ? "border-white/30 bg-midnight shadow-[0_0_24px_rgba(255,255,255,0.12)]"
                       : "border-white/10 bg-midnight/70"
