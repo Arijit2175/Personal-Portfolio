@@ -40,7 +40,6 @@ const HyperspaceTransition = ({ phase = 'warp' }) => {
 
   return (
     <section className={`hyperspace-root hyperspace-root-${phase}`} aria-hidden="true">
-      <div className="hyperspace-turbulence" />
       <div className="hyperspace-streak-layer">
         {streaks.map((streak) => (
           <span

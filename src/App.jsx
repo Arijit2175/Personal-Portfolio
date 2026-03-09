@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
@@ -99,25 +100,59 @@ const App = () => {
   return (
     <>
       <CustomCursor />
-      {view === 'landing' || view === 'departing' ? (
-        <>
-          <Landing onEnter={handleEnterPortfolio} isDeparting={view === 'departing'} />
-          {view === 'departing' && <HyperspaceTransition phase="prep" />}
-        </>
-      ) : view === 'jump' ? (
-        <HyperspaceTransition phase="warp" />
-      ) : (
-        <div className="container mx-auto max-w-7xl">
-          <Navbar />
-          <Hero />
-          <About />
-          <Projects />
-          <Experiences />
-          <Skills />
-          <Contact />
-          <Footer />
-        </div>
-      )}
+      <AnimatePresence mode="wait">
+        {view === 'landing' ? (
+          <motion.div
+            key="landing"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.45, ease: 'easeInOut' }}
+          >
+            <Landing onEnter={handleEnterPortfolio} />
+          </motion.div>
+        ) : view === 'departing' ? (
+          <motion.div
+            key="departing"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
+          >
+            <Landing onEnter={handleEnterPortfolio} isDeparting />
+            <HyperspaceTransition phase="prep" />
+          </motion.div>
+        ) : view === 'jump' ? (
+          <motion.div
+            key="jump"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+          >
+            <HyperspaceTransition phase="warp" />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="portfolio"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
+          >
+            <div className="container mx-auto max-w-7xl">
+              <Navbar />
+              <Hero />
+              <About />
+              <Projects />
+              <Experiences />
+              <Skills />
+              <Contact />
+              <Footer />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }
