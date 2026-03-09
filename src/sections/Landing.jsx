@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { Particles } from "../components/Particles";
 
 const FULL_NAME = "Arijit Karmakar";
@@ -87,7 +87,18 @@ const Landing = ({ onEnter }) => {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
         >
-          {isButtonHovered ? "Get Ready!" : "Embark On An Adventure"}
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.span
+              key={isButtonHovered ? "ready" : "embark"}
+              className="landing-button-label"
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+            >
+              {isButtonHovered ? "Get Ready!" : "Embark On An Adventure"}
+            </motion.span>
+          </AnimatePresence>
         </motion.button>
       </motion.div>
     </section>

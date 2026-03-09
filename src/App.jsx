@@ -14,6 +14,11 @@ import Landing from './sections/Landing'
 const App = () => {
   const [hasEntered, setHasEntered] = useState(false)
 
+  const handleReturnToLanding = () => {
+    setHasEntered(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
       <CustomCursor />
@@ -35,6 +40,13 @@ const App = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: 'easeOut' }}
           >
+            <button
+              type="button"
+              onClick={handleReturnToLanding}
+              className="landing-return-button"
+            >
+              Back To Landing
+            </button>
             <div className="container mx-auto max-w-7xl">
               <Navbar />
               <Hero />

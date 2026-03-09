@@ -243,6 +243,7 @@ body {
 .landing-button {
   position: relative;
   isolation: isolate;
+  min-width: 18rem;
   margin-top: 2rem;
   padding: 0.95rem 1.75rem;
   border-radius: 9999px;
@@ -254,6 +255,12 @@ body {
   letter-spacing: 0.04em;
   transition: box-shadow 0.26s ease, transform 0.26s ease, border-color 0.26s ease;
   animation: button-glow 2.8s ease-in-out infinite;
+}
+
+.landing-button-label {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 .landing-button::before {
@@ -274,6 +281,27 @@ body {
     0 0 18px rgba(120, 255, 250, 0.95),
     0 0 42px rgba(120, 255, 250, 0.7),
     0 0 78px rgba(184, 115, 255, 0.62);
+}
+
+.landing-return-button {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 60;
+  padding: 0.65rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(168, 255, 251, 0.65);
+  background: rgba(6, 9, 31, 0.72);
+  color: #ffffff;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-return-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(126, 235, 255, 0.42);
 }
 
 @keyframes drift {
