@@ -151,10 +151,7 @@ body {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 20% 25%, rgba(51, 194, 204, 0.2) 0%, rgba(6, 9, 31, 0) 38%),
-    radial-gradient(circle at 78% 32%, rgba(122, 87, 219, 0.18) 0%, rgba(6, 9, 31, 0) 35%),
-    linear-gradient(165deg, #02030d 0%, #06091f 45%, #090d2b 100%);
+  background: #030412;
 }
 
 .landing-particles {
@@ -255,14 +252,13 @@ body {
   margin-top: 2rem;
   padding: 0.95rem 1.75rem;
   border-radius: 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: linear-gradient(105deg, rgba(51, 194, 204, 0.42), rgba(122, 87, 219, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #030412;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.04em;
-  transition: box-shadow 0.26s ease, transform 0.26s ease, border-color 0.26s ease;
-  animation: button-glow 2.8s ease-in-out infinite;
+  transition: box-shadow 0.26s ease, transform 0.26s ease, border-color 0.26s ease, background-color 0.26s ease;
 }
 
 .landing-button-label {
@@ -277,18 +273,13 @@ body {
   inset: -1px;
   z-index: -1;
   border-radius: inherit;
-  background: linear-gradient(120deg, rgba(130, 248, 255, 0.32), rgba(122, 87, 219, 0.1), rgba(130, 248, 255, 0.32));
-  filter: blur(7px);
-  opacity: 0.85;
+  background: transparent;
 }
 
 .landing-button:hover {
-  border-color: rgba(154, 255, 252, 1);
-  background: linear-gradient(105deg, rgba(75, 245, 255, 0.72), rgba(195, 122, 255, 0.62));
-  box-shadow:
-    0 0 18px rgba(120, 255, 250, 0.95),
-    0 0 42px rgba(120, 255, 250, 0.7),
-    0 0 78px rgba(184, 115, 255, 0.62);
+  border-color: rgba(255, 255, 255, 0.28);
+  background: #06091f;
+  box-shadow: 0 8px 24px rgba(3, 4, 18, 0.45);
 }
 
 .landing-button:disabled {
@@ -364,9 +355,7 @@ body {
   inset: 0;
   z-index: 80;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 50%, rgba(80, 205, 255, 0.22) 0%, rgba(6, 9, 31, 0.95) 48%),
-    linear-gradient(160deg, #02030d 0%, #06091f 60%, #090d2b 100%);
+  background: #030412;
 }
 
 .hyperspace-root-warp {
@@ -374,9 +363,7 @@ body {
 }
 
 .hyperspace-root-prep {
-  background:
-    radial-gradient(circle at 50% 50%, rgba(98, 221, 255, 0.1) 0%, rgba(6, 9, 31, 0.85) 45%),
-    linear-gradient(160deg, rgba(2, 3, 13, 0.78) 0%, rgba(6, 9, 31, 0.88) 65%, rgba(9, 13, 43, 0.92) 100%);
+  background: #030412;
 }
 
 .hyperspace-streak-layer {
