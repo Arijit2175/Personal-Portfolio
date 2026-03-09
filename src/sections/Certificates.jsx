@@ -4,12 +4,14 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { certificates } from "../constants";
 
 const BASE_THETA = 0.3;
+const AUTO_ROTATION_SPEED = 0.0012;
 
 const Certificates = () => {
   const sectionRef = useRef(null);
   const canvasRef = useRef(null);
   const widthRef = useRef(0);
   const scrollPhiRef = useRef(0);
+  const autoPhiRef = useRef(0);
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -61,7 +63,8 @@ const Certificates = () => {
       glowColor: [1, 1, 1],
       markers,
       onRender: (state) => {
-        state.phi = scrollPhiRef.current;
+        autoPhiRef.current += AUTO_ROTATION_SPEED;
+        state.phi = autoPhiRef.current + scrollPhiRef.current;
         state.theta = BASE_THETA;
         state.width = widthRef.current * 2;
         state.height = widthRef.current * 2;
@@ -83,9 +86,6 @@ const Certificates = () => {
   return (
     <section className="c-space section-spacing" id="certificates" ref={sectionRef}>
       <h2 className="text-heading">Certificates</h2>
-      <p className="mt-2 text-sm text-neutral-400 md:text-base">
-        Scroll through the section to rotate the globe and explore certifications.
-      </p>
 
       <div className="mt-10 space-y-8">
         <div className="sticky top-24 z-20 w-full max-w-[30rem] mx-auto">
