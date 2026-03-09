@@ -20,9 +20,11 @@ const Project = ({
       >
         <div>
           <p className="text-2xl">{title}</p>
-          <div className="flex gap-5 mt-2 text-sand">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 mt-2 text-sm sm:text-base text-sand">
             {tags.map((tag) => (
-              <span key={tag.id}>{tag.name}</span>
+              <span key={tag.id} className="whitespace-nowrap">
+                {tag.name}
+              </span>
             ))}
           </div>
         </div>
