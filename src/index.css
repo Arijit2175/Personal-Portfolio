@@ -369,16 +369,14 @@ body {
     linear-gradient(160deg, #02030d 0%, #06091f 60%, #090d2b 100%);
 }
 
+.hyperspace-root-warp {
+  animation: hyperspace-outro 2.8s ease-in-out forwards;
+}
+
 .hyperspace-root-prep {
   background:
     radial-gradient(circle at 50% 50%, rgba(98, 221, 255, 0.1) 0%, rgba(6, 9, 31, 0.85) 45%),
     linear-gradient(160deg, rgba(2, 3, 13, 0.78) 0%, rgba(6, 9, 31, 0.88) 65%, rgba(9, 13, 43, 0.92) 100%);
-}
-
-.hyperspace-vignette {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(2, 3, 13, 0) 20%, rgba(2, 3, 13, 0.9) 100%);
 }
 
 .hyperspace-streak-layer {
@@ -424,15 +422,15 @@ body {
     radial-gradient(circle at 45% 52%, rgba(97, 237, 255, 0.22) 0%, rgba(97, 237, 255, 0) 34%),
     radial-gradient(circle at 56% 46%, rgba(138, 120, 255, 0.18) 0%, rgba(138, 120, 255, 0) 30%);
   opacity: 1;
-  filter: blur(10px) saturate(1.6);
+  filter: blur(8px) saturate(1.35);
   mix-blend-mode: screen;
-  animation: hyperspace-turbulence 0.14s steps(2, end) infinite;
+  animation: hyperspace-turbulence 0.7s ease-in-out infinite alternate;
 }
 
 .hyperspace-root-prep .hyperspace-turbulence {
   opacity: 0.4;
   filter: blur(7px) saturate(1.1);
-  animation-duration: 0.32s;
+  animation-duration: 1.1s;
 }
 
 .hyperspace-turbulence::before,
@@ -447,14 +445,14 @@ body {
   background:
     radial-gradient(circle at 54% 50%, rgba(181, 247, 255, 0.24) 0%, rgba(181, 247, 255, 0) 36%),
     radial-gradient(circle at 50% 42%, rgba(164, 140, 255, 0.2) 0%, rgba(164, 140, 255, 0) 30%);
-  animation: hyperspace-turbulence-secondary 0.19s steps(2, end) infinite;
+  animation: hyperspace-turbulence-secondary 0.95s ease-in-out infinite alternate;
 }
 
 .hyperspace-turbulence::after {
   background:
     radial-gradient(circle at 46% 57%, rgba(127, 245, 255, 0.22) 0%, rgba(127, 245, 255, 0) 34%),
     radial-gradient(circle at 56% 44%, rgba(172, 130, 255, 0.16) 0%, rgba(172, 130, 255, 0) 26%);
-  animation: hyperspace-turbulence-tertiary 0.17s steps(2, end) infinite;
+  animation: hyperspace-turbulence-tertiary 0.82s ease-in-out infinite alternate;
 }
 
 @keyframes hyperspace-streak-near {
@@ -523,28 +521,40 @@ body {
     transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
   }
   100% {
-    transform: translate3d(-12px, 9px, 0) rotate(1.6deg) scale(1.04);
+    transform: translate3d(-4px, 3px, 0) rotate(0.45deg) scale(1.015);
   }
 }
 
 @keyframes hyperspace-turbulence-secondary {
   0% {
     transform: translate3d(0, 0, 0);
-    opacity: 0.5;
+    opacity: 0.36;
   }
   100% {
-    transform: translate3d(10px, -8px, 0);
-    opacity: 0.9;
+    transform: translate3d(4px, -3px, 0);
+    opacity: 0.58;
   }
 }
 
 @keyframes hyperspace-turbulence-tertiary {
   0% {
     transform: translate3d(0, 0, 0);
-    opacity: 0.35;
+    opacity: 0.3;
   }
   100% {
-    transform: translate3d(-9px, 11px, 0);
-    opacity: 0.78;
+    transform: translate3d(-4px, 5px, 0);
+    opacity: 0.52;
+  }
+}
+
+@keyframes hyperspace-outro {
+  0%,
+  78% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0;
+    filter: blur(1.6px);
   }
 }

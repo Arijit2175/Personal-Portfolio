@@ -58,7 +58,6 @@ const HyperspaceTransition = ({ phase = 'warp' }) => {
           />
         ))}
       </div>
-      <div className="hyperspace-vignette" />
     </section>
   )
 }
