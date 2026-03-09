@@ -7,7 +7,9 @@ import { certificates } from "../constants";
 const MOVEMENT_DAMPING = 1400;
 const BASE_THETA = 0.3;
 const AUTO_ROTATION_SPEED = 0.004;
-const MARKER_RADIUS = 41;
+const MARKER_RADIUS = 39;
+const MAX_MARKER_DISTANCE = 36.8;
+const FRONT_Z_THRESHOLD = 0.04;
 
 const projectMarker = (location, phi, theta) => {
   const [lat, lon] = location;
@@ -27,7 +29,8 @@ const projectMarker = (location, phi, theta) => {
   return {
     x: x1,
     y: y2,
-    visible: z2 > -0.03,
+    z: z2,
+    visible: z2 > FRONT_Z_THRESHOLD,
   };
 };
 
@@ -74,15 +77,21 @@ const Certificates = () => {
       setPoints(
         certificates.map((certificate) => {
           const projected = projectMarker(certificate.location, phi, BASE_THETA);
+          let xPercent = projected.x * MARKER_RADIUS;
+          let yPercent = projected.y * MARKER_RADIUS;
+          const radialDistance = Math.hypot(xPercent, yPercent);
+
+          if (radialDistance > MAX_MARKER_DISTANCE) {
+            const clampScale = MAX_MARKER_DISTANCE / radialDistance;
+            xPercent *= clampScale;
+            yPercent *= clampScale;
+          }
 
           return {
             id: certificate.id,
-            visible:
-              projected.visible &&
-              Math.sqrt(projected.x * projected.x + projected.y * projected.y) <=
-                0.94,
-            left: `${50 + projected.x * MARKER_RADIUS}%`,
-            top: `${50 - projected.y * MARKER_RADIUS}%`,
+            visible: projected.visible,
+            left: `${50 + xPercent}%`,
+            top: `${50 - yPercent}%`,
           };
         })
       );
