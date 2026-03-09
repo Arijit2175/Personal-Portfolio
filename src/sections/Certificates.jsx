@@ -88,7 +88,7 @@ const Certificates = () => {
       </p>
 
       <div className="mt-10 space-y-8">
-        <div className="sticky top-24 z-20 w-full max-w-[36rem] mx-auto">
+        <div className="sticky top-24 z-20 w-full max-w-[30rem] mx-auto">
           <canvas
             ref={canvasRef}
             className="w-full transition-opacity duration-500 opacity-0 aspect-square [contain:layout_paint_size]"
@@ -105,12 +105,12 @@ const Certificates = () => {
                 key={certificate.id}
                 className={`flex ${
                   alignRight
-                    ? "justify-end pl-6 md:pl-24 lg:pl-36"
-                    : "justify-start pr-6 md:pr-24 lg:pr-36"
+                    ? "justify-end pl-8 md:pl-28 lg:pl-44"
+                    : "justify-start pr-8 md:pr-28 lg:pr-44"
                 }`}
               >
                 <div
-                  className={`w-full max-w-md border rounded-2xl p-5 transition-all duration-300 ${
+                  className={`w-full max-w-sm border rounded-2xl p-5 transition-all duration-300 ${
                     isActive
                       ? "border-white/30 bg-midnight shadow-[0_0_24px_rgba(255,255,255,0.12)]"
                       : "border-white/10 bg-midnight/70"
