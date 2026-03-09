@@ -300,6 +300,70 @@ export const education = [
     ],
   },
 ];
+
+export const certificates = [
+  {
+    id: 1,
+    title: "AWS Cloud Practitioner Essentials",
+    organization: "Amazon Web Services",
+    issued: "2024",
+    country: "United States",
+    location: [40.7128, -74.006],
+    description:
+      "Covered cloud fundamentals, AWS core services, security basics, pricing models, and real-world cloud use cases.",
+    image: "/assets/projects/cyberattack.png",
+    logo: "/assets/logos/threejs.svg",
+  },
+  {
+    id: 2,
+    title: "Google Data Analytics",
+    organization: "Google",
+    issued: "2024",
+    country: "India",
+    location: [19.076, 72.8777],
+    description:
+      "Completed practical modules in data cleaning, SQL, spreadsheet workflows, and dashboard-driven storytelling.",
+    image: "/assets/projects/quantpair.png",
+    logo: "/assets/logos/pandas.svg",
+  },
+  {
+    id: 3,
+    title: "Machine Learning Specialization",
+    organization: "Stanford / DeepLearning.AI",
+    issued: "2025",
+    country: "United Kingdom",
+    location: [51.5072, -0.1276],
+    description:
+      "Focused on supervised learning, model evaluation, bias-variance tradeoff, and practical ML pipeline design.",
+    image: "/assets/projects/heart.png",
+    logo: "/assets/logos/tensorflow.svg",
+  },
+  {
+    id: 4,
+    title: "Java Full Stack Development",
+    organization: "Internship Program",
+    issued: "2025",
+    country: "Singapore",
+    location: [1.3521, 103.8198],
+    description:
+      "Built full stack applications using Java, Servlets, SQL, and frontend integration with deployment workflows.",
+    image: "/assets/projects/edusphere.png",
+    logo: "/assets/logos/java.svg",
+  },
+  {
+    id: 5,
+    title: "Cybersecurity Foundations",
+    organization: "Cisco Networking Academy",
+    issued: "2024",
+    country: "Australia",
+    location: [-33.8688, 151.2093],
+    description:
+      "Learned network security principles, threat detection fundamentals, and layered defense strategies.",
+    image: "/assets/projects/vpn.png",
+    logo: "/assets/logos/git.svg",
+  },
+];
+
 export const skill = [
   {
     name: "Python",

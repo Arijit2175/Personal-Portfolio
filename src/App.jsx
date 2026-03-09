@@ -6,6 +6,7 @@ import About from './sections/About'
 import Projects from './sections/Projects'
 import Education from './sections/Education'
 import Experiences from './sections/Experiences'
+import Certificates from './sections/Certificates'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
@@ -154,6 +155,7 @@ const App = () => {
               <Projects />
               <Education />
               <Experiences />
+              <Certificates />
               <Skills />
               <Contact />
               <Footer />
