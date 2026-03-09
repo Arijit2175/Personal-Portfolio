@@ -1,9 +1,25 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 
 const STAR_COUNT = 70;
+const FULL_NAME = "Arijit Karmakar";
 
 const Landing = ({ onEnter }) => {
+  const [typedName, setTypedName] = useState("");
+
+  useEffect(() => {
+    let charIndex = 0;
+    const typeTimer = window.setInterval(() => {
+      charIndex += 1;
+      setTypedName(FULL_NAME.slice(0, charIndex));
+      if (charIndex >= FULL_NAME.length) {
+        window.clearInterval(typeTimer);
+      }
+    }, 95);
+
+    return () => window.clearInterval(typeTimer);
+  }, []);
+
   const stars = useMemo(
     () =>
       Array.from({ length: STAR_COUNT }, (_, index) => ({
@@ -12,8 +28,11 @@ const Landing = ({ onEnter }) => {
         top: `${Math.random() * 100}%`,
         size: 1 + Math.random() * 2,
         delay: Math.random() * 4,
-        duration: 3 + Math.random() * 4,
+        twinkleDuration: 2 + Math.random() * 4,
+        driftDuration: 10 + Math.random() * 12,
         opacity: 0.3 + Math.random() * 0.7,
+        driftX: `${(Math.random() * 26 - 13).toFixed(2)}px`,
+        driftY: `${(Math.random() * 26 - 13).toFixed(2)}px`,
       })),
     []
   );
@@ -22,6 +41,11 @@ const Landing = ({ onEnter }) => {
     <section className="landing-root">
       <div className="landing-nebula landing-nebula-left" />
       <div className="landing-nebula landing-nebula-right" />
+
+      <div className="landing-ship-orbit" aria-hidden="true">
+        <div className="landing-ship-trail" />
+        <div className="landing-ship" />
+      </div>
 
       <div className="landing-stars" aria-hidden="true">
         {stars.map((star) => (
@@ -33,9 +57,11 @@ const Landing = ({ onEnter }) => {
               top: star.top,
               width: `${star.size}px`,
               height: `${star.size}px`,
-              animationDelay: `${star.delay}s`,
-              animationDuration: `${star.duration}s`,
+              animationDelay: `${star.delay}s, ${star.delay / 2}s`,
+              animationDuration: `${star.twinkleDuration}s, ${star.driftDuration}s`,
               opacity: star.opacity,
+              "--star-dx": star.driftX,
+              "--star-dy": star.driftY,
             }}
           />
         ))}
@@ -60,9 +86,12 @@ const Landing = ({ onEnter }) => {
           className="landing-title"
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.3 }}
+          transition={{ duration: 0.9, delay: 0.22 }}
         >
-          Arijit Karmakar
+          <span>{typedName}</span>
+          <span className="landing-caret" aria-hidden="true">
+            |
+          </span>
         </motion.h1>
 
         <motion.p
