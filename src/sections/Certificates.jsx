@@ -105,12 +105,12 @@ const Certificates = () => {
                 key={certificate.id}
                 className={`flex ${
                   alignRight
-                    ? "justify-end pl-4 md:pl-16 lg:pl-24"
-                    : "justify-start pr-4 md:pr-16 lg:pr-24"
+                    ? "justify-end pl-6 md:pl-24 lg:pl-36"
+                    : "justify-start pr-6 md:pr-24 lg:pr-36"
                 }`}
               >
                 <div
-                  className={`w-full max-w-lg border rounded-2xl p-5 transition-all duration-300 ${
+                  className={`w-full max-w-md border rounded-2xl p-5 transition-all duration-300 ${
                     isActive
                       ? "border-white/30 bg-midnight shadow-[0_0_24px_rgba(255,255,255,0.12)]"
                       : "border-white/10 bg-midnight/70"
