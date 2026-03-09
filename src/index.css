@@ -382,7 +382,6 @@ body {
 .hyperspace-streak-layer {
   position: absolute;
   inset: 0;
-  filter: blur(0.35px);
 }
 
 .hyperspace-streak {
@@ -391,27 +390,24 @@ body {
   top: 50%;
   border-radius: 9999px;
   transform-origin: left center;
-  background: linear-gradient(90deg, rgba(0, 235, 255, 0), rgba(58, 225, 255, 1), rgba(0, 235, 255, 0));
-  box-shadow: 0 0 18px rgba(58, 225, 255, 1), 0 0 40px rgba(58, 225, 255, 0.84), 0 0 84px rgba(53, 153, 255, 0.45);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0));
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  will-change: transform, opacity;
 }
 
 .hyperspace-streak-near {
-  filter: blur(0.25px);
   opacity: 1;
   animation-name: hyperspace-streak-near;
 }
 
 .hyperspace-streak-far {
-  filter: blur(1px);
-  opacity: 0.68;
+  opacity: 0.58;
   animation-name: hyperspace-streak-far;
 }
 
 .hyperspace-streak-prep {
-  background: linear-gradient(90deg, rgba(112, 226, 255, 0), rgba(176, 242, 255, 0.95), rgba(112, 226, 255, 0));
-  box-shadow: 0 0 8px rgba(176, 242, 255, 0.8), 0 0 16px rgba(176, 242, 255, 0.45);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(245, 248, 255, 0.95), rgba(255, 255, 255, 0));
   animation-name: hyperspace-streak-prep;
 }
 
@@ -433,7 +429,7 @@ body {
     opacity: 1;
   }
   100% {
-    transform: rotate(var(--streak-angle)) translateX(var(--streak-distance)) scaleX(3.8);
+    transform: rotate(var(--streak-angle)) translateX(var(--streak-distance)) scaleX(5.4);
     opacity: 0;
   }
 }
@@ -452,7 +448,7 @@ body {
     opacity: 0.65;
   }
   100% {
-    transform: rotate(var(--streak-angle)) translateX(calc(var(--streak-distance) * 0.78)) scaleX(1.5);
+    transform: rotate(var(--streak-angle)) translateX(calc(var(--streak-distance) * 0.78)) scaleX(2.6);
     opacity: 0;
   }
 }
@@ -471,7 +467,7 @@ body {
     opacity: 0.55;
   }
   100% {
-    transform: rotate(var(--streak-angle)) translateX(var(--streak-distance)) scaleX(1);
+    transform: rotate(var(--streak-angle)) translateX(var(--streak-distance)) scaleX(1.8);
     opacity: 0;
   }
 }

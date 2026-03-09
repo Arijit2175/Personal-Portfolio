@@ -11,16 +11,16 @@ const HyperspaceTransition = ({ phase = 'warp' }) => {
         angle: `${Math.random() * 360}deg`,
         distance:
           phase === 'prep'
-            ? `${16 + Math.random() * 30}vmax`
-            : `${85 + Math.random() * 150}vmax`,
+            ? `${20 + Math.random() * 42}vmax`
+            : `${110 + Math.random() * 170}vmax`,
         width:
           phase === 'prep'
-            ? `${8 + Math.random() * 28}px`
-            : `${35 + Math.random() * 180}px`,
+            ? `${18 + Math.random() * 62}px`
+            : `${90 + Math.random() * 260}px`,
         height:
           phase === 'prep'
-            ? `${0.8 + Math.random() * 1.6}px`
-            : `${2 + Math.random() * 4.5}px`,
+            ? `${0.8 + Math.random() * 1.2}px`
+            : `${1.4 + Math.random() * 2.6}px`,
         delay:
           phase === 'prep'
             ? `${Math.random() * 0.95}s`
