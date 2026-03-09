@@ -322,3 +322,97 @@ body {
     opacity: 0;
   }
 }
+
+/* Hyperspace Transition */
+.hyperspace-root {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(80, 210, 255, 0.12) 0%, rgba(6, 9, 31, 0.95) 48%),
+    linear-gradient(160deg, #02030d 0%, #06091f 60%, #090d2b 100%);
+}
+
+.hyperspace-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(2, 3, 13, 0) 25%, rgba(2, 3, 13, 0.82) 100%);
+}
+
+.hyperspace-streak-layer {
+  position: absolute;
+  inset: 0;
+  filter: blur(0.4px);
+}
+
+.hyperspace-streak {
+  position: absolute;
+  left: -35%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(155, 240, 255, 0.96), rgba(255, 255, 255, 0));
+  animation-name: hyperspace-streak;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.27, 0.62, 0.39, 0.98);
+}
+
+.hyperspace-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background: #e7ffff;
+  box-shadow: 0 0 22px rgba(147, 238, 255, 0.9), 0 0 70px rgba(147, 238, 255, 0.62);
+  animation: hyperspace-core 1.7s ease-in-out forwards;
+}
+
+.hyperspace-flash {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(circle at center, rgba(210, 248, 255, 0.9), rgba(210, 248, 255, 0));
+  animation: hyperspace-flash 1.7s ease-in forwards;
+}
+
+@keyframes hyperspace-streak {
+  0% {
+    transform: translate3d(0, 0, 0) scaleX(0.15);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(180vw, 0, 0) scaleX(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes hyperspace-core {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(6);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 0;
+  }
+}
+
+@keyframes hyperspace-flash {
+  0%,
+  68% {
+    opacity: 0;
+  }
+  86% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+  }
+}

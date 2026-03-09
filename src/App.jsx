@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
@@ -9,17 +9,26 @@ import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
 import CustomCursor from './components/CustomCursor'
+import HyperspaceTransition from './components/HyperspaceTransition'
 import Landing from './sections/Landing'
 
+const TRANSITION_DURATION_MS = 1700
+
 const App = () => {
-  const [hasEntered, setHasEntered] = useState(false)
+  const [view, setView] = useState('landing')
+  const transitionTimerRef = useRef(null)
 
   useEffect(() => {
     window.history.replaceState({ view: 'landing' }, '')
 
     const handlePopState = (event) => {
       const isPortfolioView = event.state?.view === 'portfolio'
-      setHasEntered(isPortfolioView)
+      setView(isPortfolioView ? 'portfolio' : 'landing')
+
+      if (transitionTimerRef.current) {
+        window.clearTimeout(transitionTimerRef.current)
+        transitionTimerRef.current = null
+      }
 
       if (!isPortfolioView) {
         window.scrollTo({ top: 0, behavior: 'auto' })
@@ -27,34 +36,55 @@ const App = () => {
     }
 
     window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
+    return () => {
+      if (transitionTimerRef.current) {
+        window.clearTimeout(transitionTimerRef.current)
+      }
+      window.removeEventListener('popstate', handlePopState)
+    }
   }, [])
 
   const handleEnterPortfolio = () => {
-    setHasEntered(true)
+    if (view !== 'landing') return
+
     window.history.pushState({ view: 'portfolio' }, '')
+    setView('jump')
+    transitionTimerRef.current = window.setTimeout(() => {
+      setView('portfolio')
+      transitionTimerRef.current = null
+    }, TRANSITION_DURATION_MS)
   }
 
   return (
     <>
       <CustomCursor />
       <AnimatePresence mode="wait">
-        {!hasEntered ? (
+        {view === 'landing' ? (
           <motion.div
             key="landing"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.35 }}
           >
             <Landing onEnter={handleEnterPortfolio} />
+          </motion.div>
+        ) : view === 'jump' ? (
+          <motion.div
+            key="jump"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+          >
+            <HyperspaceTransition />
           </motion.div>
         ) : (
           <motion.div
             key="portfolio"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 14, scale: 1.01 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <div className="container mx-auto max-w-7xl">
               <Navbar />
