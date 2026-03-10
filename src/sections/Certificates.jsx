@@ -217,10 +217,7 @@ const Certificates = () => {
                     />
                     <div>
                       <h3 className="text-xl font-semibold text-white">{certificate.title}</h3>
-                      <p className="text-sm text-neutral-400">
-                        {certificate.organization}
-                        {certificate.country ? ` | ${certificate.country}` : ""}
-                      </p>
+                      <p className="text-sm text-neutral-400">{certificate.organization}</p>
                     </div>
                   </div>
 
