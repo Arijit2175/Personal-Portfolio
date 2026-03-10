@@ -304,6 +304,18 @@ export const education = [
 export const certificates = [
   {
     id: 1,
+    title: "Introduction to Cybersecurity",
+    organization: "Cisco Networking Academy",
+    country: "United States",
+    location: [41.8781, -87.6298],
+    issued: "Mar 2026",
+    description:
+      "Covered cybersecurity fundamentals, including network security, cryptography, and threat management.",
+    image: "/assets/certificates/cisco-cyber.jpeg",
+    logo: "/assets/logos/cisco.svg",
+  },
+  {
+    id: 2,
     title: "Web Development Fundamentals",
     organization: "IBM",
     country: "United States",
@@ -315,7 +327,7 @@ export const certificates = [
     logo: "/assets/logos/ibm.svg",
   },
   {
-    id: 2,
+    id: 3,
     title: "Artificial Intelligence Fundamentals",
     organization: "IBM",
     country: "United States",
@@ -327,7 +339,7 @@ export const certificates = [
     logo: "/assets/logos/ibm.svg",
   },
   {
-    id: 3,
+    id: 4,
     title: "AWS Cloud Practitioner Essentials",
     organization: "Amazon Web Services",
     country: "United States",
@@ -339,7 +351,7 @@ export const certificates = [
     logo: "/assets/logos/aws.svg",
   },
   {
-    id: 4,
+    id: 5,
     title: "Security Principles in Cloud Computing",
     organization: "Google",
     country: "United States",
@@ -351,7 +363,7 @@ export const certificates = [
     logo: "/assets/logos/google.svg",
   },
   {
-    id: 5,
+    id: 6,
     title: "Generative AI",
     organization: "Google",
     country: "United States",
