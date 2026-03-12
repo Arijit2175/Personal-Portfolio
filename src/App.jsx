@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
+import GitHubActivity from './sections/GitHubActivity'
 import Projects from './sections/Projects'
 import Education from './sections/Education'
 import Experiences from './sections/Experiences'
@@ -152,6 +153,7 @@ const App = () => {
               <Navbar />
               <Hero />
               <About />
+              <GitHubActivity />
               <Projects />
               <Education />
               <Experiences />
