@@ -117,22 +117,23 @@ export const myProjects = [
   },
   {
     id: 4,
-    title: "VPN Tunnel",
+    title: "WatchX",
     description:
-      "A simplified educational implementation of how VPN (Virtual Private Network) technology works.",
+      "A real-time system monitoring tool to track hardware and software performance.",
     subDescription: [
-      "Implemented AES encryption and RSA key exchange with real-time packet forwarding using Pcap4J.",
-      "Built a Swing-based GUI with dark/light mode and live VPN traffic visualization.",
-      "Designed a modular, multi-threaded architecture for secure socket-based networking.",
+      "Monitors CPU, GPU, RAM, and disk usage in real time.",
+      "Displays active processes and system resource allocation.",
+      "Provides alerts for high resource consumption.",
+      "Interactive GUI with charts and performance logs for easy tracking.",
     ],
-    href: "https://github.com/Arijit2175/VPN-implementation",
+    href: "https://github.com/Arijit2175/WatchX",
     logo: "",
-    image: "/assets/projects/vpn.png",
+    image: "/assets/projects/watchx.png",
     tags: [
       {
         id: 1,
-        name: "Java",
-        path: "/assets/logos/java.svg",
+        name: "Python",
+        path: "/assets/logos/Python.svg",
       },
     ],
   },
